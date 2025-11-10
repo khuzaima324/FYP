@@ -1,5 +1,6 @@
 import Proposal from "../models/proposalModel.js";
 import Project from "../models/projectModel.js";
+import Student from "../models/studentModel.js";
 
 // @desc    Get all pending proposals
 // @route   GET /api/proposals/pending
@@ -62,5 +63,52 @@ export const rejectProposal = async (req, res) => {
     res.json({ message: "Proposal rejected" });
   } catch (error) {
     res.status(500).json({ message: "Error rejecting proposal", error });
+  }
+};
+
+// @desc    Get all proposals for the logged-in student
+// @route   GET /api/proposals/my-proposals
+export const getMyProposals = async (req, res) => {
+  try {
+    const student = await Student.findOne({ userId: req.user._id });
+    if (!student) {
+      return res.status(404).json({ message: "Student profile not found" });
+    }
+
+    const proposals = await Proposal.find({ students: student._id })
+      .populate("supervisor", "name")
+      .sort({ createdAt: -1 });
+      
+    res.json(proposals);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching proposals", error });
+  }
+};
+
+// @desc    Create a new proposal
+// @route   POST /api/proposals
+export const createProposal = async (req, res) => {
+  const { title, description, supervisor } = req.body;
+
+  try {
+    const student = await Student.findOne({ userId: req.user._id });
+    if (!student) {
+      return res.status(404).json({ message: "Student profile not found" });
+    }
+    
+    if (student.group) {
+        return res.status(400).json({ message: "You are already in a group and cannot submit new proposals." });
+    }
+
+    const proposal = await Proposal.create({
+      title,
+      description,
+      supervisor,
+      students: [student._id], // Add the student who is proposing it
+    });
+
+    res.status(201).json(proposal);
+  } catch (error) {
+    res.status(500).json({ message: "Error submitting proposal", error });
   }
 };

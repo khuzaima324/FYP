@@ -8,7 +8,7 @@ const projectSchema = new mongoose.Schema(
     supervisor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Teacher",
-      required: true,
+      default: null,
     },
     students: [
       {
