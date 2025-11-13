@@ -16,16 +16,36 @@ const proposalSchema = new mongoose.Schema(
     supervisor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Teacher",
-      required: true,
+      default: null,
     },
     status: {
       type: String,
-      enum: ["pending", "approved", "rejected"],
-      default: "pending",
+      enum: [
+        "pending_onepager", // Student submits one-pager
+        "pending_proposal", // Admin approves one-pager
+        "pending_final_approval", // Student submits full proposal
+        "approved", // Admin gives final approval
+        "rejected", // Admin rejects at any step
+      ],
+      default: "pending_onepager", // New default
+    },
+    onePagerPath: {
+      type: String,
+      required: true,
+    },
+    proposalFilePath: {
+      type: String, // For the full proposal (Step 2)
+      default: null,
+    },
+    originProject: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+      default: null,
     },
   },
   { timestamps: true }
 );
 
-const Proposal = mongoose.models.Proposal || mongoose.model("Proposal", proposalSchema);
+const Proposal =
+  mongoose.models.Proposal || mongoose.model("Proposal", proposalSchema);
 export default Proposal;

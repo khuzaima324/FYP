@@ -4,9 +4,9 @@ import PastProject from "../models/pastProjectModel.js";
 // @route   POST /api/past-projects
 export const createPastProject = async (req, res) => {
   try {
-    const { title, description, session, supervisorName, studentNames, projectLink } = req.body;
+    const { title, description, session, supervisorName, studentNames, projectLink, studentRollNumbers, groupName, department} = req.body;
     
-    if (!title || !description || !session || !supervisorName) {
+    if (!title || !session || !department) {
       return res.status(400).json({ message: "Please fill all required fields" });
     }
     
@@ -14,8 +14,11 @@ export const createPastProject = async (req, res) => {
       title,
       description,
       session,
-      supervisorName,
+      supervisorName: supervisorName || null,
+      department,
+      groupName: groupName || null,
       studentNames: studentNames || [],
+      studentRollNumbers: studentRollNumbers || [],
       projectLink,
     });
     

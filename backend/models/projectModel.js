@@ -21,6 +21,22 @@ const projectSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    origin: {
+      type: String,
+      enum: ['admin', 'proposal'], // admin = suggested, proposal = from student
+      required: true,
+      default: 'admin',
+    },
+    projectLink: {
+      type: String, // For GitHub or live demo link
+      trim: true,
+      default: null,
+    },
+    documentationPath: {
+      type: String, // For the path to the final PDF/DOCX
+      trim: true,
+      default: null,
+    },
   },
   { timestamps: true }
 );

@@ -1,5 +1,6 @@
 import Project from "../models/projectModel.js";
 import Student from "../models/studentModel.js";
+import Proposal from "../models/proposalModel.js"; // ✅ ADD THIS IMPORT
 
 // @desc    Create a new project (by admin)
 // @route   POST /api/projects
@@ -18,6 +19,7 @@ export const createProject = async (req, res) => {
       // 2. Only add supervisor if one was sent (otherwise it will be null)
       supervisor: supervisor || null,
       isAssigned: false,
+      origin: 'admin', // Set origin to 'admin' for manually created projects
     });
 
     res.status(201).json(project);
@@ -32,6 +34,7 @@ export const getAllProjects = async (req, res) => {
   try {
     const projects = await Project.find()
       .populate("supervisor", "name")
+      .populate("students", "name group") 
       .sort({ createdAt: -1 });
     res.json(projects);
   } catch (error) {
@@ -52,48 +55,90 @@ export const getAvailableProjects = async (req, res) => {
   }
 };
 
-// @desc    Student selects a project
-// @route   PUT /api/projects/:id/select
-export const selectProject = async (req, res) => {
+export const revokeProjectAssignment = async (req, res) => {
   try {
-    const studentId = req.user._id; // This is the User ID
-    const projectId = req.params.id;
+    const project = await Project.findById(req.params.id);
 
-    // 1. Find the student
-    const student = await Student.findOne({ userId: studentId });
-    if (!student) {
-      return res.status(404).json({ message: "Student not found" });
-    }
-    // 2. Check if student is already in a group/project
-    if (student.group) {
-      return res.status(400).json({ message: "You are already in a group or have a project" });
-    }
-
-    // 3. Find the project
-    const project = await Project.findById(projectId);
     if (!project) {
       return res.status(404).json({ message: "Project not found" });
     }
-    // 4. Check if project is available
-    if (project.isAssigned) {
-      return res.status(400).json({ message: "Sorry, this project is no longer available" });
+    if (!project.isAssigned) {
+      return res.status(400).json({ message: "Project is not assigned" });
     }
 
-    // 5. Assign the project
-    project.isAssigned = true;
-    project.students.push(student._id);
+    const studentIds = project.students; // Get the list of students in the project
+
+    // 1. Update the Project
+    project.isAssigned = false;
+    project.students = [];
+    await project.save();
+
+    // 2. Update all Students in that group
+    if (studentIds && studentIds.length > 0) {
+      await Student.updateMany(
+        { _id: { $in: studentIds } },
+        { supervisor: null } // Set their supervisor back to null
+        // We leave their 'group' name as-is for the admin to manage
+      );
+
+      // 3. Find the associated proposal and set it to 'rejected'
+      const proposal = await Proposal.findOne({
+        students: { $in: studentIds },
+        status: "approved",
+      });
+      
+      if (proposal) {
+        proposal.status = "rejected";
+        await proposal.save();
+      }
+    }
+
+    res.json({ message: "Project assignment has been revoked." });
+  } catch (error) {
+    console.error("Error revoking project:", error);
+    res.status(500).json({ message: "Error revoking project", error });
+  }
+};
+
+
+// @desc    Student submits final documentation
+// @route   PUT /api/projects/submit-documentation
+// controllers/projectController.js
+
+// ... (your other functions: createProject, getAllProjects, etc.)
+
+// @desc    Student submits final documentation
+// @route   PUT /api/projects/submit-documentation
+export const submitFinalDocumentation = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: "Documentation file is required" });
+  }
+
+  const { projectLink } = req.body;
+
+  try {
+    // 1. Find the student's profile from their login token
+    const student = await Student.findOne({ userId: req.user._id });
+    if (!student) {
+      return res.status(404).json({ message: "Student profile not found" });
+    }
+
+    // 2. Find their *assigned* project
+    const project = await Project.findOne({ students: student._id, isAssigned: true });
+    if (!project) {
+      return res.status(404).json({ message: "No assigned project found" });
+    }
     
-    // 6. Assign the project details to the student
-    student.group = `Project_${project.title.split(' ')[0].replace(/\W/g, '')}`; // Auto-create a group name
-    student.supervisor = project.supervisor; // Assign project supervisor to student
+    // 3. Update the project with the new file paths
+    project.projectLink = projectLink || null;
+    project.documentationPath = req.file.path; // req.file comes from middleware
     
     await project.save();
-    await student.save();
     
-    res.json({ message: "Project selected successfully" });
+    res.json({ message: "Deliverables submitted successfully!", project });
 
   } catch (error) {
-    console.error("Error selecting project:", error);
-    res.status(500).json({ message: "Error selecting project", error });
+    console.error("Error submitting documentation:", error);
+    res.status(500).json({ message: "Error submitting documentation", error: error.message });
   }
 };

@@ -1,5 +1,6 @@
 import Student from "../../models/StudentModel.js";
 import User from "../../models/userModel.js";
+import Project from "../../models/projectModel.js"; // ✅ 1. THIS IMPORT WAS MISSING
 
 // Add new student (creates both Student + linked User)
 export const addStudent = async (req, res) => {
@@ -25,12 +26,11 @@ export const addStudent = async (req, res) => {
       !department ||
       !semester ||
       !section ||
-      !session // ✅ ADDED
+      !session
     ) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    // ✅ ADDED: Validate session format
     if (!/^\d{4}-\d{4}$/.test(session)) {
       return res
         .status(400)
@@ -59,10 +59,9 @@ export const addStudent = async (req, res) => {
       department,
       semester,
       section,
-      // password, // ❌ REMOVED: This belongs in the User model only
       userId: user._id,
-      group: group || null, // ✅ ADDED
-      session: session, // ✅ ADDED
+      group: group || null,
+      session: session,
     });
 
     await student.save();
@@ -78,14 +77,44 @@ export const addStudent = async (req, res) => {
   }
 };
 
+// ===================================
+// ✅ 2. THIS IS YOUR NEW, UPDATED FUNCTION
+// ===================================
 // Get all students
 export const getStudents = async (req, res) => {
   try {
+    // 1. Get all students and supervisors
     const students = await Student.find()
-      .populate("supervisor", "name") // This is correct
-      .sort({ createdAt: -1 });
-    res.json(students);
+      .populate("supervisor", "name")
+      .lean(); // .lean() makes it faster
+
+    // 2. Get all assigned projects
+    const projects = await Project.find({ isAssigned: true })
+      .select("title students")
+      .lean();
+
+    // 3. Create a fast lookup map of (studentId -> projectTitle)
+    const studentProjectMap = new Map();
+    for (const project of projects) {
+      for (const studentId of project.students) {
+        studentProjectMap.set(studentId.toString(), project.title);
+      }
+    }
+
+    // 4. Combine the data
+    const studentsWithProjects = students.map(student => {
+      // Find the project title from the map using the student's ID
+      const projectTitle = studentProjectMap.get(student._id.toString()) || null;
+      return {
+        ...student,
+        projectTitle: projectTitle, // Attach the project title
+      };
+    });
+
+    res.json(studentsWithProjects);
   } catch (error) {
+    // This will now correctly send the error message if something fails
+    console.error("Error in getStudents:", error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -113,7 +142,7 @@ export const updateStudent = async (req, res) => {
       semester,
       rollNumber,
       group,
-      session, // ✅ ADDED
+      session,
     } = req.body;
 
     const student = await Student.findById(req.params.id);
@@ -126,8 +155,8 @@ export const updateStudent = async (req, res) => {
     student.department = department || student.department;
     student.semester = semester || student.semester;
     student.rollNumber = rollNumber || student.rollNumber;
-    student.group = group; // This correctly allows group to be set to ""
-    student.session = session || student.session; // ✅ ADDED
+    student.group = group;
+    student.session = session || student.session;
 
     await student.save();
 
@@ -137,7 +166,6 @@ export const updateStudent = async (req, res) => {
       if (user) {
         user.name = name || user.name;
         user.email = email || user.email;
-        // user.group = group || user.group; // ❌ REMOVED: Incorrect, user model doesn't store group
         if (password) user.password = password; // auto-hashed in userModel
         await user.save();
       }
@@ -158,6 +186,9 @@ export const deleteStudent = async (req, res) => {
 
     if (student.userId) {
       await User.findByIdAndDelete(student.userId);
+    } else {
+      // Fallback for old data
+      await User.deleteOne({ email: student.email, role: "student" });
     }
 
     await Student.findByIdAndDelete(req.params.id);
@@ -217,4 +248,4 @@ export const assignGroup = async (req, res) => {
       .status(500)
       .json({ message: "Error assigning group", error: error.message });
   }
-};
+};  

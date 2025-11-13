@@ -2,8 +2,8 @@ import User from "../../models/userModel.js";
 import Student from "../../models/studentModel.js";
 import Project from "../../models/projectModel.js";
 
-// @desc    Get data for the student dashboard (profile, project)
-// @route   GET /api/student/dashboard-data
+// @desc    Get the logged-in student's dashboard data
+// @route   GET /api/student/dashboard
 export const getStudentDashboardData = async (req, res) => {
   try {
     // 1. Find the logged-in student's profile
@@ -11,6 +11,7 @@ export const getStudentDashboardData = async (req, res) => {
       "supervisor",
       "name"
     );
+
     if (!student) {
       return res.status(404).json({ message: "Student profile not found" });
     }
@@ -21,11 +22,24 @@ export const getStudentDashboardData = async (req, res) => {
       "name"
     );
 
-    res.json({ student, project });
+    // 3. ✅ NEW: Find their group members
+    let groupMembers = [];
+    if (student.group) {
+      // Find all students in the same group, but exclude the logged-in user
+      groupMembers = await Student.find({
+        group: student.group,
+        _id: { $ne: student._id }, // $ne means "not equal"
+      }).select("name rollNumber"); // Only send the name and roll number
+    }
+
+    // 4. ✅ NEW: Return all data
+    res.json({ student, project, groupMembers });
   } catch (error) {
-    res.status(500).json({ message: "Server error", error });
+    console.error("Error fetching dashboard data:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
 
 // @desc    Get the logged-in student's full profile
 // @route   GET /api/student/profile

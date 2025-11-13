@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { ApiCall } from "../../api/apiCall";
 import { toast } from "react-toastify";
 
@@ -13,7 +13,7 @@ function ManageStudents() {
     rollNumber: "",
     email: "",
     department: "",
-    session: "", // Session field
+    session: "",
     semester: "",
     section: "",
     password: "",
@@ -23,6 +23,11 @@ function ManageStudents() {
   const [filterSection, setFilterSection] = useState("");
   const [filterDept, setFilterDept] = useState("");
   const [refreshToggle, setRefreshToggle] = useState(false);
+
+  // ===================================
+  // ✅ 1. CHECKBOX SET TO TRUE BY DEFAULT
+  // ===================================
+  const [sortByGroup, setSortByGroup] = useState(true);
 
   const adminInfo = JSON.parse(localStorage.getItem("userInfo"));
   const token = adminInfo?.token || null;
@@ -46,10 +51,10 @@ function ManageStudents() {
   const calculateSemester = (sessionString) => {
     // Expects "YYYY-YYYY"
     if (!sessionString || !/^\d{4}-\d{4}$/.test(sessionString)) return "";
-    
-    const startYear = parseInt(sessionString.split('-')[0], 10);
+
+    const startYear = parseInt(sessionString.split("-")[0], 10);
     if (isNaN(startYear)) return "";
-    
+
     const now = new Date();
     const currentYear = now.getFullYear();
     const currentMonth = now.getMonth(); // 0-11 (Jan=0, Aug=7)
@@ -67,7 +72,6 @@ function ManageStudents() {
     return `${semesterNumber}${suffix}`;
   };
 
-
   // --- Data Fetching ---
   const fetchStudents = async () => {
     try {
@@ -76,6 +80,7 @@ function ManageStudents() {
         verb: "get",
         token,
       });
+      // This 'res' must contain the 'projectTitle' for the new logic to work
       setStudents(Array.isArray(res) ? res : res.students || []);
     } catch (err) {
       toast.error(err?.message || "Failed to fetch students");
@@ -100,24 +105,20 @@ function ManageStudents() {
     fetchTeachers();
   }, [refreshToggle]);
 
-  // ===================================
-  // ✅ 1. useEffect LOGIC IS NOW FIXED
-  // ===================================
   useEffect(() => {
     // Auto-fill semester ONLY when adding new, not editing
     if (!editingStudent) {
       // Only calculate if the session format is complete
       if (form.session.length === 9 && /^\d{4}-\d{4}$/.test(form.session)) {
         const calculated = calculateSemester(form.session);
-        setForm(f => ({ ...f, semester: calculated }));
-      } 
+        setForm((f) => ({ ...f, semester: calculated }));
+      }
       // Clear semester if session is emptied
       else if (form.session.length === 0) {
-        setForm(f => ({ ...f, semester: "" }));
+        setForm((f) => ({ ...f, semester: "" }));
       }
     }
   }, [form.session, editingStudent]);
-
 
   // --- Form Handlers ---
   const handleChange = (e) => {
@@ -151,7 +152,7 @@ function ManageStudents() {
       toast.error("Please fill all required fields");
       return;
     }
-    
+
     if (!/^\d{4}-\d{4}$/.test(form.session)) {
       toast.error("Session format must be YYYY-YYYY (e.g., 2022-2026)");
       return;
@@ -291,21 +292,68 @@ function ManageStudents() {
   };
 
   // --- Filter Logic ---
-  const filteredStudents = students.filter((s) => {
-    const q = search.trim().toLowerCase();
-    const matchesSearch =
-      !q ||
-      (s.name || "").toLowerCase().includes(q) ||
-      (s.rollNumber || "").toLowerCase().includes(q) ||
-      (s.email || "").toLowerCase().includes(q) ||
-      (s.group || "").toLowerCase().replace("-", "").includes(q.replace("-", "")) ||
-      (s.session || "").toLowerCase().includes(q); // Search session
+  const groupColors = [
+    "bg-blue-100",
+    "bg-green-100",
+    "bg-yellow-100",
+    "bg-indigo-100",
+    "bg-pink-100",
+    "bg-purple-100",
+    "bg-orange-100",
+  ];
 
-    const matchesSection = !filterSection || (s.section || "") === filterSection;
-    const matchesDept = !filterDept || (s.department || "") === filterDept;
-    return matchesSearch && matchesSection && matchesDept;
-  });
+  // This hook filters, sorts, and creates the color map all at once
+  const { processedStudents, groupColorMap } = useMemo(() => {
+    // 1. Filtering logic (from your original code)
+    let filtered = students.filter((s) => {
+      const q = search.trim().toLowerCase();
+      const matchesSearch =
+        !q ||
+        (s.name || "").toLowerCase().includes(q) ||
+        (s.rollNumber || "").toLowerCase().includes(q) ||
+        (s.email || "").toLowerCase().includes(q) ||
+        (s.group || "")
+          .toLowerCase()
+          .replace("-", "")
+          .includes(q.replace("-", "")) ||
+        (s.session || "").toLowerCase().includes(q);
 
+      const matchesSection =
+        !filterSection || (s.section || "") === filterSection;
+      const matchesDept = !filterDept || (s.department || "") === filterDept;
+      return matchesSearch && matchesSection && matchesDept;
+    });
+
+    const newColorMap = {};
+
+    // 2. Sorting logic (if checkbox is checked)
+    if (sortByGroup) {
+      filtered.sort((a, b) => {
+        const groupA = a.group || ""; // Treat null/undefined as ""
+        const groupB = b.group || "";
+
+        if (groupA && !groupB) return -1; // A (has group) comes before B (no group)
+        if (!groupA && groupB) return 1; // B comes before A
+        if (!groupA && !groupB) return 0; // Both no group, same order
+
+        // Both have groups, sort alphabetically
+        return groupA.localeCompare(groupB);
+      });
+
+      // 3. Generate Color Map
+      let colorIndex = 0;
+      const uniqueGroups = [
+        ...new Set(filtered.map((s) => s.group).filter(Boolean)),
+      ];
+
+      uniqueGroups.forEach((groupName) => {
+        newColorMap[groupName] = groupColors[colorIndex % groupColors.length];
+        colorIndex++;
+      });
+    }
+
+    return { processedStudents: filtered, groupColorMap: newColorMap };
+  }, [students, search, filterSection, filterDept, sortByGroup]);
 
   // --- JSX Return ---
   return (
@@ -317,17 +365,45 @@ function ManageStudents() {
       {/* Add/Edit Form */}
       <form onSubmit={handleSubmit} className="mb-6 space-y-3 max-w-2xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required className="p-2 border rounded"/>
-          <input name="rollNumber" placeholder="Roll Number" value={form.rollNumber} onChange={handleChange} required className="p-2 border rounded"/>
-          <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required className="p-2 border rounded"/>
-          
-          <select name="department" value={form.department} onChange={handleChange} required className="p-2 border rounded">
+          <input
+            name="name"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="p-2 border rounded"
+          />
+          <input
+            name="rollNumber"
+            placeholder="Roll Number"
+            value={form.rollNumber}
+            onChange={handleChange}
+            required
+            className="p-2 border rounded"
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="p-2 border rounded"
+          />
+
+          <select
+            name="department"
+            value={form.department}
+            onChange={handleChange}
+            required
+            className="p-2 border rounded"
+          >
             <option value="">Select Department</option>
             <option value="BS-IT">BS-IT</option>
             <option value="BS-CS">BS-CS</option>
           </select>
-          
-           <input
+
+          <input
             name="session"
             type="text"
             placeholder="Session (e.g., 2022-2026)"
@@ -337,7 +413,7 @@ function ManageStudents() {
             required
             className="p-2 border rounded"
           />
-          
+
           <input
             name="semester"
             placeholder="Semester"
@@ -346,15 +422,27 @@ function ManageStudents() {
             required
             className="p-2 border rounded"
           />
-          
-          <select name="section" value={form.section} onChange={handleChange} required className="p-2 border rounded">
+
+          <select
+            name="section"
+            value={form.section}
+            onChange={handleChange}
+            required
+            className="p-2 border rounded"
+          >
             <option value="">Select Section</option>
             <option value="Morning">Morning</option>
             <option value="Evening">Evening</option>
           </select>
 
-          <input name="group" placeholder="Group Name (e.g. G1)" value={form.group} onChange={handleChange} className="p-2 border rounded"/>
-          
+          <input
+            name="group"
+            placeholder="Group Name (e.g. G1)"
+            value={form.group}
+            onChange={handleChange}
+            className="p-2 border rounded"
+          />
+
           <input
             name="password"
             type="password"
@@ -371,11 +459,18 @@ function ManageStudents() {
         </div>
 
         <div className="flex gap-3">
-          <button type="submit" className="bg-[#a96a3f] text-white px-4 py-2 rounded">
+          <button
+            type="submit"
+            className="bg-[#a96a3f] text-white px-4 py-2 rounded"
+          >
             {editingStudent ? "Update Student" : "Add Student"}
           </button>
           {editingStudent && (
-            <button type="button" onClick={cancelEdit} className="bg-gray-400 text-white px-4 py-2 rounded">
+            <button
+              type="button"
+              onClick={cancelEdit}
+              className="bg-gray-400 text-white px-4 py-2 rounded"
+            >
               Cancel
             </button>
           )}
@@ -383,7 +478,9 @@ function ManageStudents() {
       </form>
 
       {/* Search & Filters */}
-      <div className="flex flex-wrap gap-3 mb-4 items-center">
+      <div className="flex flex-wrap gap-4 mb-4 items-center">
+        {" "}
+        {/* Changed gap-3 to gap-4 */}
         <input
           placeholder="Search by name, roll, email, group or session"
           value={search}
@@ -408,8 +505,25 @@ function ManageStudents() {
           <option value="BS-IT">BS-IT</option>
           <option value="BS-CS">BS-CS</option>
         </select>
+        {/* =================================== */}
+        {/* ✅ 2. CHECKBOX CHECKED STATE UPDATED */}
+        {/* =================================== */}
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            id="sortGroup"
+            checked={sortByGroup}
+            onChange={(e) => setSortByGroup(e.target.checked)}
+            className="h-4 w-4 text-indigo-600 border-gray-300 rounded"
+          />
+          <label
+            htmlFor="sortGroup"
+            className="ml-2 block text-sm font-medium text-gray-700"
+          >
+            Sort & Highlight Groups
+          </label>
+        </div>
       </div>
-
 
       {/* Student Table */}
       <div className="overflow-x-auto">
@@ -429,88 +543,119 @@ function ManageStudents() {
             </tr>
           </thead>
           <tbody>
-            {filteredStudents.length === 0 ? (
+            {processedStudents.length === 0 ? (
               <tr>
                 <td colSpan="10" className="p-4 text-center">
                   No students found
                 </td>
               </tr>
             ) : (
-              filteredStudents.map((s) => (
-                <tr key={s._id} className="border-t">
-                  <td className="px-3 py-2">{s.name}</td>
-                  <td className="px-3 py-2">{s.rollNumber}</td>
-                  <td className="px-3 py-2">{s.email}</td>
-                  <td className="px-3 py-2">{s.department}</td>
-                  <td className="px-3 py-2">{s.session}</td>
-                  <td className="px-3 py-2">{s.semester}</td>
-                  <td className="px-3 py-2">{s.section}</td>
-                  <td className="px-3 py-2">
-                    {s.supervisor ? (
-                      <span>{s.supervisor.name}</span>
-                    ) : (
-                      <>
-                        <select
-                          className="p-1 border rounded"
-                          value={supervisorSelections[s._id] || ""}
-                          onChange={(e) =>
-                            setSupervisorSelections({
-                              ...supervisorSelections,
-                              [s._id]: e.target.value,
-                            })
-                          }
-                        >
-                          <option value="">Select</option>
-                          {teachers.map((t) => (
-                            <option key={t._id} value={t._id}>
-                              {t.name}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => assignSupervisor(s._id)}
-                          className="ml-2 bg-green-600 text-white px-2 py-1 rounded"
-                        >
-                          Assign
-                        </button>
-                      </>
-                    )}
-                  </td>
-                  <td className="px-3 py-2">
-                    {s.group ? (
-                      <span>{s.group}</span>
-                    ) : (
-                      <>
-                        <input
-                          placeholder="Group name"
-                          value={groupInputs[s._id] || ""}
-                          onChange={(e) =>
-                            setGroupInputs({
-                              ...groupInputs,
-                              [s._id]: formatGroupInput(e.target.value),
-                            })
-                          }
-                          className="border p-1 rounded w-24"
-                        />
-                        <button
-                          onClick={() => assignGroup(s._id)}
-                          className="ml-2 bg-purple-600 text-white px-2 py-1 rounded"
-                        >
-                          Set
-                        </button>
-                      </>
-                    )}
-                  </td>
-                  <td className="px-3 py-2 flex gap-2">
-                    <button onClick={() => handleEdit(s)} className="bg-blue-500 text-white px-2 py-1 rounded">
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(s._id)} className="bg-red-500 text-white px-2 py-1 rounded">
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))
+              processedStudents.map((s) => {
+                // Get the color class for this student's row
+                const rowClass =
+                  sortByGroup && s.group ? groupColorMap[s.group] : "";
+
+                return (
+                  <tr key={s._id} className={`border-t ${rowClass}`}>
+                    <td className="px-3 py-2">{s.name}</td>
+                    <td className="px-3 py-2">{s.rollNumber}</td>
+                    <td className="px-3 py-2">{s.email}</td>
+                    <td className="px-3 py-2">{s.department}</td>
+                    <td className="px-3 py-2">{s.session}</td>
+                    <td className="px-3 py-2">{s.semester}</td>
+                    <td className="px-3 py-2">{s.section}</td>
+                    <td className="px-3 py-2">
+                      {s.supervisor ? (
+                        <span>{s.supervisor.name}</span>
+                      ) : (
+                        <>
+                          <select
+                            className="p-1 border rounded"
+                            value={supervisorSelections[s._id] || ""}
+                            onChange={(e) =>
+                              setSupervisorSelections({
+                                ...supervisorSelections,
+                                [s._id]: e.target.value,
+                              })
+                            }
+                          >
+                            <option value="">Select</option>
+                            {teachers.map((t) => (
+                              <option key={t._id} value={t._id}>
+                                {t.name}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            onClick={() => assignSupervisor(s._id)}
+                            className="ml-2 bg-green-600 text-white px-2 py-1 rounded"
+                          >
+                            Assign
+                          </button>
+                        </>
+                      )}
+                    </td>
+
+                    {/* =================================== */}
+                    {/* ✅ 3. UPDATED "GROUP" CELL LOGIC */}
+                    {/* =================================== */}
+                    <td className="px-3 py-2">
+                      {/* 's.projectTitle' must be sent from your backend.
+                        This check will fail until your backend is updated.
+                      */}
+                      {s.projectTitle ? (
+                        <div className="flex flex-col">
+                          <span className="font-semibold text-green-700">
+                            Project Approved
+                          </span>
+                          <span className="text-xs text-gray-600 truncate" title={s.projectTitle}>
+                            {s.projectTitle}
+                          </span>
+                        </div>
+                      ) : s.group ? (
+                        // If no project, check for group
+                        <span>{s.group}</span>
+                      ) : (
+                        // If neither, show assign input
+                        <>
+                          <input
+                            placeholder="Group name"
+                            value={groupInputs[s._id] || ""}
+                            onChange={(e) =>
+                              setGroupInputs({
+                                ...groupInputs,
+                                [s._id]: formatGroupInput(e.target.value),
+                              })
+                            }
+                            className="border p-1 rounded w-24"
+                          />
+                          <button
+                            onClick={() => assignGroup(s._id)}
+                            className="ml-2 bg-purple-600 text-white px-2 py-1 rounded"
+                          >
+                            Set
+                          </button>
+                        </>
+                      )}
+                    </td>
+
+                    <td className="px-3 py-2 flex gap-2">
+                      <button
+                        onClick={() => handleEdit(s)}
+                        className="bg-blue-500 text-white px-2 py-1 rounded"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDelete(s._id)}
+                        className="bg-red-500 text-white px-2 py-1 rounded"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>

@@ -3,6 +3,9 @@
 // import { ApiCall } from "../../api/apiCall";
 // import { toast } from "react-toastify";
 
+// // ✅ 1. Added API_URL for file links
+// const API_URL = "http://localhost:5000";
+
 // // A simple component for the stat cards
 // function StatCard({ title, value }) {
 //   return (
@@ -29,6 +32,12 @@
 //     description: "",
 //     supervisor: "", // Will hold the teacher's ID
 //   });
+
+//   // ✅ 2. Renamed state for the new "Details" modal
+//   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+//   const [selectedProposal, setSelectedProposal] = useState(null);
+//   const [selectedSupervisorId, setSelectedSupervisorId] = useState("");
+//   const [isSubmitting, setIsSubmitting] = useState(false);
 
 //   const token = JSON.parse(localStorage.getItem("userInfo"))?.token || null;
 
@@ -67,19 +76,80 @@
 
 //   // --- Action Handlers ---
 
-//   const handleProposal = async (proposalId, action) => {
-//     if (!window.confirm(`Are you sure you want to ${action} this proposal?`)) return;
+//   // ✅ 3. Updated function: now just opens the details modal
+//   const openDetailsModal = (proposal) => {
+//     setSelectedProposal(proposal);
+//     // Pre-fill supervisor if one was already suggested (e.g., from an application)
+//     setSelectedSupervisorId(proposal.supervisor?._id || "");
+//     setIsDetailsModalOpen(true);
+//   };
+
+//   const closeDetailsModal = () => {
+//     setIsDetailsModalOpen(false);
+//     setSelectedProposal(null);
+//     setSelectedSupervisorId("");
+//   };
+  
+//   // project revoke function (Unchanged)
+//   const handleRevoke = async (projectId, projectTitle) => {
+//     if (!window.confirm(`Are you sure you want to REVOKE this project?\n\n"${projectTitle}"\n\nThis will remove the group and supervisor.`)) return;
 
 //     try {
 //       await ApiCall({
-//         route: `proposals/${proposalId}/${action}`, // e.g., /api/proposals/123/approve
+//         route: `projects/${projectId}/revoke`,
 //         verb: "put",
 //         token: token,
 //       });
-//       toast.success(`Proposal ${action}ed successfully!`);
-//       setRefreshToggle(s => !s); // Refresh data
+//       toast.success("Project assignment revoked!");
+//       setRefreshToggle(s => !s); // Refresh all data
 //     } catch (err) {
-//       toast.error(err?.response?.data?.message || `Failed to ${action} proposal`);
+//       toast.error(err?.response?.data?.message || `Failed to revoke project`);
+//     }
+//   };
+
+//   // ✅ 4. Renamed function (was handleApprovalSubmit)
+//   const handleApproveProject = async (e) => {
+//     e.preventDefault();
+//     if (!selectedProposal) return;
+
+//     setIsSubmitting(true);
+//     try {
+//       await ApiCall({
+//         route: `proposals/${selectedProposal._id}/approve`,
+//         verb: "put",
+//         token: token,
+//         data: { supervisorId: selectedSupervisorId || null }, // Send ID or null
+//       });
+      
+//       toast.success("Proposal approved!");
+//       closeDetailsModal();
+//       setRefreshToggle(s => !s);
+//     } catch (err) {
+//       toast.error(err?.response?.data?.message || "Failed to approve proposal");
+//     } finally {
+//       setIsSubmitting(false);
+//     }
+//   };
+
+//   // ✅ 5. New function for the modal's reject button
+//   const handleRejectProject = async () => {
+//     if (!selectedProposal) return;
+//     if (!window.confirm(`Are you sure you want to REJECT this proposal?\n\n"${selectedProposal.title}"`)) return;
+
+//     setIsSubmitting(true);
+//     try {
+//       await ApiCall({
+//         route: `proposals/${selectedProposal._id}/reject`,
+//         verb: "put",
+//         token: token,
+//       });
+//       toast.success(`Proposal rejected successfully!`);
+//       closeDetailsModal();
+//       setRefreshToggle(s => !s);
+//     } catch (err) {
+//       toast.error(err?.response?.data?.message || `Failed to reject proposal`);
+//     } finally {
+//       setIsSubmitting(false);
 //     }
 //   };
 
@@ -89,8 +159,9 @@
 
 //   const handleSuggestProject = async (e) => {
 //     e.preventDefault();
-//     if (!newProject.title || !newProject.description || !newProject.supervisor) {
-//       toast.error("Please fill all fields");
+    
+//     if (!newProject.title || !newProject.description) {
+//       toast.error("Please fill in title and description");
 //       return;
 //     }
 
@@ -99,7 +170,7 @@
 //         route: "projects", // POST to /api/projects
 //         verb: "post",
 //         token: token,
-//         data: newProject,
+//         data: newProject, // Sends { title, desc, supervisor: "" or "id" }
 //       });
 //       toast.success("Project suggested successfully!");
 //       setIsModalOpen(false);
@@ -139,15 +210,17 @@
 //       {/* Main Content Grids */}
 //       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
-//         {/* Pending Proposals */}
+//         {/* =================================== */}
+//         {/* ✅ 6. UPDATED PENDING PROPOSALS TABLE */}
+//         {/* =================================== */}
 //         <div className="bg-white p-4 shadow rounded-lg">
 //           <h2 className="text-xl font-semibold mb-4">Pending Student Proposals</h2>
-//           <div className="overflow-x-auto">
+//           <div className="overflow-x-auto max-h-96">
 //             <table className="w-full">
 //               <thead>
 //                 <tr className="bg-gray-50">
 //                   <th className="px-4 py-2 text-left text-sm font-medium">Title</th>
-//                   <th className="px-4 py-2 text-left text-sm font-medium">Student(s)</th>
+//                   <th className="px-4 py-2 text-left text-sm font-medium">Group</th>
 //                   <th className="px-4 py-2 text-left text-sm font-medium">Actions</th>
 //                 </tr>
 //               </thead>
@@ -158,10 +231,14 @@
 //                   proposals.map(prop => (
 //                     <tr key={prop._id} className="border-b">
 //                       <td className="px-4 py-2">{prop.title}</td>
-//                       <td className="px-4 py-2">{prop.students.map(s => s.name).join(', ')}</td>
+//                       <td className="px-4 py-2">{prop.students[0]?.group || 'N/A'}</td>
 //                       <td className="px-4 py-2 flex gap-2">
-//                         <button onClick={() => handleProposal(prop._id, 'approve')} className="text-xs bg-green-500 text-white px-2 py-1 rounded">Approve</button>
-//                         <button onClick={() => handleProposal(prop._id, 'reject')} className="text-xs bg-red-500 text-white px-2 py-1 rounded">Reject</button>
+//                         <button 
+//                           onClick={() => openDetailsModal(prop)} 
+//                           className="text-xs bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+//                         >
+//                           View Details
+//                         </button>
 //                       </td>
 //                     </tr>
 //                   ))
@@ -171,7 +248,9 @@
 //           </div>
 //         </div>
 
-//         {/* All Projects */}
+//         {/* =================================== */}
+//         {/* ✅ 7. UPDATED "ALL PROJECTS" TABLE */}
+//         {/* =================================== */}
 //         <div className="bg-white p-4 shadow rounded-lg">
 //           <h2 className="text-xl font-semibold mb-4">All Projects</h2>
 //           <div className="overflow-x-auto max-h-96">
@@ -180,22 +259,36 @@
 //                 <tr className="bg-gray-50">
 //                   <th className="px-4 py-2 text-left text-sm font-medium">Title</th>
 //                   <th className="px-4 py-2 text-left text-sm font-medium">Supervisor</th>
-//                   <th className="px-4 py-2 text-left text-sm font-medium">Status</th>
+//                   <th className="px-4 py-2 text-left text-sm font-medium">Group</th>
+//                   <th className="px-4 py-2 text-left text-sm font-medium">Actions</th>
 //                 </tr>
 //               </thead>
 //               <tbody>
 //                 {projects.length === 0 ? (
-//                   <tr><td colSpan="3" className="p-4 text-center text-gray-500">No projects found.</td></tr>
+//                   <tr><td colSpan="4" className="p-4 text-center text-gray-500">No projects found.</td></tr>
 //                 ) : (
 //                   projects.map(proj => (
 //                     <tr key={proj._id} className="border-b">
 //                       <td className="px-4 py-2">{proj.title}</td>
 //                       <td className="px-4 py-2">{proj.supervisor?.name || 'N/A'}</td>
+//                       <td className="px-4 py-2">{proj.students[0]?.group || 'N/A'}</td>
 //                       <td className="px-4 py-2">
 //                         {proj.isAssigned ? (
-//                           <span className="text-xs font-medium bg-red-100 text-red-800 px-2 py-0.5 rounded-full">Assigned</span>
+//                           <div className="flex items-center gap-2">
+//                             <span className="text-xs font-medium bg-red-100 text-red-800 px-2 py-0.5 rounded-full">
+//                               Assigned
+//                             </span>
+//                             <button 
+//                               onClick={() => handleRevoke(proj._id, proj.title)}
+//                               className="text-xs bg-yellow-600 text-white px-2 py-1 rounded hover:bg-yellow-700"
+//                             >
+//                               Revoke
+//                             </button>
+//                           </div>
 //                         ) : (
-//                           <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Available</span>
+//                           <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-0.5 rounded-full">
+//                             Available
+//                           </span>
 //                         )}
 //                       </td>
 //                     </tr>
@@ -207,7 +300,7 @@
 //         </div>
 //       </div>
 
-//       {/* "Suggest Project" Modal */}
+//       {/* "Suggest Project" Modal (Unchanged) */}
 //       {isModalOpen && (
 //         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
 //           <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg">
@@ -237,9 +330,8 @@
 //                   value={newProject.supervisor}
 //                   onChange={handleModalChange}
 //                   className="w-full p-2 border rounded"
-//                   required
 //                 >
-//                   <option value="">Select a Supervisor</option>
+//                   <option value="">Select a Supervisor (Optional)</option>
 //                   {teachers.map(teacher => (
 //                     <option key={teacher._id} value={teacher._id}>
 //                       {teacher.name}
@@ -266,16 +358,122 @@
 //           </div>
 //         </div>
 //       )}
+
+//       {/* =================================== */}
+//       {/* ✅ 8. RENAMED & ENHANCED "DETAILS" MODAL */}
+//       {/* =================================== */}
+//       {isDetailsModalOpen && selectedProposal && (
+//         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 py-10">
+//           <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg max-h-full overflow-y-auto">
+//             <h2 className="text-2xl font-bold mb-4">Proposal Details</h2>
+            
+//             {/* --- Proposal Info --- */}
+//             <div className="space-y-4 mb-6">
+//               <div>
+//                 <label className="block text-sm font-medium text-gray-700">Title</label>
+//                 <p className="text-lg font-semibold">{selectedProposal.title}</p>
+//               </div>
+              
+//               <div>
+//                 <label className="block text-sm font-medium text-gray-700">Submitted By (Group)</label>
+//                 <p className="font-semibold">{selectedProposal.students[0]?.group || 'N/A'}</p>
+//                 <p className="text-sm text-gray-600">
+//                   {selectedProposal.students.map(s => s.name).join(', ')}
+//                 </p>
+//               </div>
+              
+//               <div>
+//                 <label className="block text-sm font-medium text-gray-700">Description</label>
+//                 <p className="text-gray-700 text-sm bg-gray-50 p-2 border rounded max-h-32 overflow-y-auto">
+//                   {selectedProposal.description || 'N/A'}
+//                 </p>
+//               </div>
+
+//               <div>
+//                 <label className="block text-sm font-medium text-gray-700">One-Pager</label>
+//                 <a
+//                   href={`${API_URL}/${selectedProposal.onePagerPath.replace(/\\/g, "/")}`}
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   download
+//                   className="text-blue-600 hover:underline font-medium"
+//                 >
+//                   Download One-Pager PDF
+//                 </a>
+//               </div>
+//             </div>
+            
+//             {/* --- Admin Action Form --- */}
+//             <form onSubmit={handleApproveProject}>
+//               <div className="space-y-4">
+//                 <label className="block text-sm font-medium text-gray-700">
+//                   Assign a Supervisor (Optional)
+//                 </label>
+//                 <select
+//                   name="supervisor"
+//                   value={selectedSupervisorId}
+//                   onChange={(e) => setSelectedSupervisorId(e.target.value)}
+//                   className="w-full p-2 border rounded"
+//                 >
+//                   <option value="">Select a Supervisor (or assign later)</option>
+//                   {teachers.map(teacher => (
+//                     <option key={teacher._id} value={teacher._id}>
+//                       {teacher.name}
+//                     </option>
+//                   ))}
+//                 </select>
+//               </div>
+
+//               {/* --- Modal Buttons --- */}
+//               <div className="flex justify-between gap-3 mt-6">
+//                 <button
+//                   type="button"
+//                   onClick={handleRejectProject}
+//                   className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+//                   disabled={isSubmitting}
+//                 >
+//                   {isSubmitting ? "..." : "Reject Proposal"}
+//                 </button>
+//                 <div className="flex gap-3">
+//                   <button
+//                     type="button"
+//                     onClick={closeDetailsModal}
+//                     className="bg-gray-400 text-white px-4 py-2 rounded"
+//                     disabled={isSubmitting}
+//                   >
+//                     Cancel
+//                   </button>
+//                   <button
+//                     type="submit"
+//                     className="bg-green-600 text-white px-4 py-2 rounded"
+//                     disabled={isSubmitting}
+//                   >
+//                     {isSubmitting ? "Approving..." : "Approve Project"}
+//                   </button>
+//                 </div>
+//               </div>
+//             </form>
+//           </div>
+//         </div>
+//       )}
+
 //     </div>
 //   );
 // }
-  
+
 // export default AdminDashboard;
+
+
+
+
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ApiCall } from "../../api/apiCall";
 import { toast } from "react-toastify";
+
+// ✅ 1. Add API_URL for file links
+const API_URL = "http://localhost:5000";
 
 // A simple component for the stat cards
 function StatCard({ title, value }) {
@@ -303,6 +501,12 @@ function AdminDashboard() {
     description: "",
     supervisor: "", // Will hold the teacher's ID
   });
+
+  // ✅ 2. Renamed state for the new "Details" modal
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [selectedProposal, setSelectedProposal] = useState(null);
+  const [selectedSupervisorId, setSelectedSupervisorId] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const token = JSON.parse(localStorage.getItem("userInfo"))?.token || null;
 
@@ -341,19 +545,99 @@ function AdminDashboard() {
 
   // --- Action Handlers ---
 
-  const handleProposal = async (proposalId, action) => {
-    if (!window.confirm(`Are you sure you want to ${action} this proposal?`)) return;
+  // ✅ 3. This function now just opens the modal
+  const openDetailsModal = (proposal) => {
+    setSelectedProposal(proposal);
+    // Pre-fill supervisor if one was already suggested (e.g., from an application)
+    setSelectedSupervisorId(proposal.supervisor?._id || "");
+    setIsDetailsModalOpen(true);
+  };
+
+  const closeDetailsModal = () => {
+    setIsDetailsModalOpen(false);
+    setSelectedProposal(null);
+    setSelectedSupervisorId("");
+  };
+
+  // ✅ 4. Renamed from handleApprovalSubmit
+  const handleApproveProject = async (e) => {
+    e.preventDefault();
+    if (!selectedProposal) return;
+
+    setIsSubmitting(true);
+    
+    // ✅ 5. NEW: Determine which API route to call
+    let route;
+    let data;
+
+    if (selectedProposal.status === 'pending_onepager') {
+      // This is Stage 1 approval
+      route = `proposals/${selectedProposal._id}/approve-onepager`;
+      data = {}; // No data needed
+    } else if (selectedProposal.status === 'pending_final_approval') {
+      // This is Stage 2 (Final) approval
+      route = `proposals/${selectedProposal._id}/approve-final`;
+      data = { supervisorId: selectedSupervisorId || null }; // Send optional supervisor
+    } else {
+      toast.error("Proposal is in an invalid state.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       await ApiCall({
-        route: `proposals/${proposalId}/${action}`, // e.g., /api/proposals/123/approve
+        route: route,
+        verb: "put",
+        token: token,
+        data: data,
+      });
+      
+      toast.success("Proposal approved!");
+      closeDetailsModal();
+      setRefreshToggle(s => !s);
+    } catch (err) {
+      toast.error(err?.response?.data?.message || "Failed to approve proposal");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // ✅ 6. New function for the modal's reject button
+  const handleRejectProject = async () => {
+    if (!selectedProposal) return;
+    if (!window.confirm(`Are you sure you want to REJECT this proposal?\n\n"${selectedProposal.title}"`)) return;
+
+    setIsSubmitting(true); // Disable buttons
+    try {
+      await ApiCall({
+        route: `proposals/${selectedProposal._id}/reject`,
         verb: "put",
         token: token,
       });
-      toast.success(`Proposal ${action}ed successfully!`);
-      setRefreshToggle(s => !s); // Refresh data
+      toast.success(`Proposal rejected successfully!`);
+      closeDetailsModal();
+      setRefreshToggle(s => !s);
     } catch (err) {
-      toast.error(err?.response?.data?.message || `Failed to ${action} proposal`);
+      toast.error(err?.response?.data?.message || `Failed to reject proposal`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+  // project revoke function (Unchanged)
+  const handleRevoke = async (projectId, projectTitle) => {
+    if (!window.confirm(`Are you sure you want to REVOKE this project?\n\n"${projectTitle}"\n\nThis will remove the group and supervisor.`)) return;
+
+    try {
+      await ApiCall({
+        route: `projects/${projectId}/revoke`,
+        verb: "put",
+        token: token,
+      });
+      toast.success("Project assignment revoked!");
+      setRefreshToggle(s => !s); // Refresh all data
+    } catch (err) {
+      toast.error(err?.response?.data?.message || `Failed to revoke project`);
     }
   };
 
@@ -364,11 +648,8 @@ function AdminDashboard() {
   const handleSuggestProject = async (e) => {
     e.preventDefault();
     
-    // ===================================
-    // ✅ 1. VALIDATION UPDATED
-    // ===================================
     if (!newProject.title || !newProject.description) {
-      toast.error("Please fill in title and description"); // ✅ 2. TOAST UPDATED
+      toast.error("Please fill in title and description");
       return;
     }
 
@@ -417,29 +698,41 @@ function AdminDashboard() {
       {/* Main Content Grids */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
-        {/* Pending Proposals */}
+        {/* =================================== */}
+        {/* ✅ 7. UPDATED PENDING PROPOSALS TABLE */}
+        {/* =================================== */}
         <div className="bg-white p-4 shadow rounded-lg">
           <h2 className="text-xl font-semibold mb-4">Pending Student Proposals</h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto max-h-96">
             <table className="w-full">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-4 py-2 text-left text-sm font-medium">Title</th>
-                  <th className="px-4 py-2 text-left text-sm font-medium">Student(s)</th>
+                  <th className="px-4 py-2 text-left text-sm font-medium">Group</th>
+                  <th className="px-4 py-2 text-left text-sm font-medium">Status</th>
                   <th className="px-4 py-2 text-left text-sm font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {proposals.length === 0 ? (
-                  <tr><td colSpan="3" className="p-4 text-center text-gray-500">No pending proposals.</td></tr>
+                  <tr><td colSpan="4" className="p-4 text-center text-gray-500">No pending proposals.</td></tr>
                 ) : (
                   proposals.map(prop => (
                     <tr key={prop._id} className="border-b">
                       <td className="px-4 py-2">{prop.title}</td>
-                      <td className="px-4 py-2">{prop.students.map(s => s.name).join(', ')}</td>
-                      <td className="px-4 py-2 flex gap-2">
-                        <button onClick={() => handleProposal(prop._id, 'approve')} className="text-xs bg-green-500 text-white px-2 py-1 rounded">Approve</button>
-                        <button onClick={() => handleProposal(prop._id, 'reject')} className="text-xs bg-red-500 text-white px-2 py-1 rounded">Reject</button>
+                      <td className="px-4 py-2">{prop.students[0]?.group || 'N/A'}</td>
+                      <td className="px-4 py-2">
+                        {/* Show what step it's on */}
+                        {prop.status === 'pending_onepager' && <span className="text-xs font-medium bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full">One-Pager</span>}
+                        {prop.status === 'pending_final_approval' && <span className="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">Full Proposal</span>}
+                      </td>
+                      <td className="px-4 py-2">
+                        <button 
+                          onClick={() => openDetailsModal(prop)} 
+                          className="text-xs bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+                        >
+                          View Details
+                        </button>
                       </td>
                     </tr>
                   ))
@@ -449,7 +742,9 @@ function AdminDashboard() {
           </div>
         </div>
 
-        {/* All Projects */}
+        {/* =================================== */}
+        {/* ✅ 8. UPDATED "ALL PROJECTS" TABLE */}
+        {/* =================================== */}
         <div className="bg-white p-4 shadow rounded-lg">
           <h2 className="text-xl font-semibold mb-4">All Projects</h2>
           <div className="overflow-x-auto max-h-96">
@@ -458,22 +753,36 @@ function AdminDashboard() {
                 <tr className="bg-gray-50">
                   <th className="px-4 py-2 text-left text-sm font-medium">Title</th>
                   <th className="px-4 py-2 text-left text-sm font-medium">Supervisor</th>
-                  <th className="px-4 py-2 text-left text-sm font-medium">Status</th>
+                  <th className="px-4 py-2 text-left text-sm font-medium">Group</th>
+                  <th className="px-4 py-2 text-left text-sm font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {projects.length === 0 ? (
-                  <tr><td colSpan="3" className="p-4 text-center text-gray-500">No projects found.</td></tr>
+                  <tr><td colSpan="4" className="p-4 text-center text-gray-500">No projects found.</td></tr>
                 ) : (
                   projects.map(proj => (
                     <tr key={proj._id} className="border-b">
                       <td className="px-4 py-2">{proj.title}</td>
                       <td className="px-4 py-2">{proj.supervisor?.name || 'N/A'}</td>
+                      <td className="px-4 py-2">{proj.students[0]?.group || 'N/A'}</td>
                       <td className="px-4 py-2">
                         {proj.isAssigned ? (
-                          <span className="text-xs font-medium bg-red-100 text-red-800 px-2 py-0.5 rounded-full">Assigned</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-medium bg-red-100 text-red-800 px-2 py-0.5 rounded-full">
+                              Assigned
+                            </span>
+                            <button 
+                              onClick={() => handleRevoke(proj._id, proj.title)}
+                              className="text-xs bg-yellow-600 text-white px-2 py-1 rounded hover:bg-yellow-700"
+                            >
+                              Revoke
+                            </button>
+                          </div>
                         ) : (
-                          <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Available</span>
+                          <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-0.5 rounded-full">
+                            Available
+                          </span>
                         )}
                       </td>
                     </tr>
@@ -485,7 +794,7 @@ function AdminDashboard() {
         </div>
       </div>
 
-      {/* "Suggest Project" Modal */}
+      {/* "Suggest Project" Modal (Unchanged) */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg">
@@ -510,15 +819,11 @@ function AdminDashboard() {
                   rows="4"
                   required
                 />
-                {/* =================================== */}
-                {/* ✅ 3. FORM INPUT UPDATED */}
-                {/* =================================== */}
                 <select
                   name="supervisor"
                   value={newProject.supervisor}
                   onChange={handleModalChange}
                   className="w-full p-2 border rounded"
-                  // required attribute removed
                 >
                   <option value="">Select a Supervisor (Optional)</option>
                   {teachers.map(teacher => (
@@ -547,6 +852,127 @@ function AdminDashboard() {
           </div>
         </div>
       )}
+
+      {/* =================================== */}
+      {/* ✅ 9. NEW "PROPOSAL DETAILS" MODAL */}
+      {/* =================================== */}
+      {isDetailsModalOpen && selectedProposal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 py-10">
+          <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg max-h-full overflow-y-auto">
+            <h2 className="text-2xl font-bold mb-4">Proposal Details</h2>
+            
+            {/* --- Proposal Info --- */}
+            <div className="space-y-4 mb-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Title</label>
+                <p className="text-lg font-semibold">{selectedProposal.title}</p>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Submitted By (Group)</label>
+                <p className="font-semibold">{selectedProposal.students[0]?.group || 'N/A'}</p>
+                <p className="text-sm text-gray-600">
+                  {selectedProposal.students.map(s => s.name).join(', ')}
+                </p>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Description</label>
+                <p className="text-gray-700 text-sm bg-gray-50 p-2 border rounded max-h-32 overflow-y-auto">
+                  {selectedProposal.description || 'N/A'}
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">One-Pager</label>
+                <a
+                  href={`${API_URL}/${selectedProposal.onePagerPath.replace(/\\/g, "/")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Download One-Pager PDF
+                </a>
+              </div>
+              
+              {/* Show full proposal if it has been submitted */}
+              {selectedProposal.proposalFilePath && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Full Proposal</label>
+                  <a
+                    href={`${API_URL}/${selectedProposal.proposalFilePath.replace(/\\/g, "/")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="text-blue-600 hover:underline font-medium"
+                  >
+                    Download Full Proposal
+                  </a>
+                </div>
+              )}
+            </div>
+            
+            {/* --- Admin Action Form --- */}
+            <form onSubmit={handleApproveProject}>
+              
+              {/* Only show supervisor dropdown for FINAL approval */}
+              {selectedProposal.status === 'pending_final_approval' && (
+                <div className="space-y-4 mb-4">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Assign a Supervisor (Optional)
+                  </label>
+                  <select
+                    name="supervisor"
+                    value={selectedSupervisorId}
+                    onChange={(e) => setSelectedSupervisorId(e.target.value)}
+                    className="w-full p-2 border rounded"
+                  >
+                    <option value="">Select a Supervisor (or assign later)</option>
+                    {teachers.map(teacher => (
+                      <option key={teacher._id} value={teacher._id}>
+                        {teacher.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* --- Modal Buttons --- */}
+              <div className="flex justify-between gap-3 mt-6">
+                <button
+                  type="button"
+                  onClick={handleRejectProject}
+                  className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "..." : "Reject Proposal"}
+                </button>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={closeDetailsModal}
+                    className="bg-gray-400 text-white px-4 py-2 rounded"
+                    disabled={isSubmitting}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="bg-green-600 text-white px-4 py-2 rounded"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Approving..." : 
+                      (selectedProposal.status === 'pending_onepager' ? "Approve One-Pager" : "Approve Final Project")
+                    }
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

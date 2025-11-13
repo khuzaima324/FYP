@@ -1,0 +1,3581 @@
+[
+  {
+    "title": "its Food Industry",
+    "description": "N/A",
+    "session": "2012-2016",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": null,
+    "studentNames": [
+      "Muhammad Sulaman Saleem",
+      "Muhammad Afaq",
+      "Muhammad Waqar"
+    ],
+    "studentRollNumbers": [
+      "7621",
+      "7644",
+      "7583"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "PEC Counseling",
+    "description": "N/A",
+    "session": "2012-2016",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": null,
+    "studentNames": [
+      "Bilal Hussain",
+      "Ahsan Amir",
+      "Waseem Ahmad"
+    ],
+    "studentRollNumbers": [
+      "7604",
+      "7641",
+      "7606"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "College Online Admission System",
+    "description": "N/A",
+    "session": "2012-2016",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": null,
+    "studentNames": [
+      "Hairs Khalid",
+      "Tanveer Liaquat",
+      "Zuhaib Bhatti"
+    ],
+    "studentRollNumbers": [
+      "7649",
+      "7601",
+      "7614"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Library System",
+    "description": "N/A",
+    "session": "2012-2016",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": null,
+    "studentNames": [
+      "Muhammad Ahmed Bazil",
+      "Shoaib Mehmood",
+      "Muhammad Usman Saleem"
+    ],
+    "studentRollNumbers": [
+      "7625",
+      "7587",
+      "7579"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Examination Management System For Islamia College Civil Lines Lahore",
+    "description": "N/A",
+    "session": "2012-2016",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": null,
+    "studentNames": [
+      "Tousef-ur-Rehman",
+      "Usman Saleem",
+      "Mohsin Ali"
+    ],
+    "studentRollNumbers": [
+      "7631",
+      "7628",
+      "7627"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Air Soft Management System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-01",
+    "studentNames": [
+      "Mufakhar Ali",
+      "Muhammad Umar",
+      "Ali Haider"
+    ],
+    "studentRollNumbers": [
+      "982",
+      "930",
+      "995"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "RUBA Digital System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-03",
+    "studentNames": [
+      "Muhammad Mohsin",
+      "Umer Abbas",
+      "Syed Suleman Sarfraz"
+    ],
+    "studentRollNumbers": [
+      "903",
+      "973",
+      "976"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "BS 4 Year Management System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-04",
+    "studentNames": [
+      "Rehan Akbar",
+      "Rana Danish Hassan",
+      "Shoaib Mehmood"
+    ],
+    "studentRollNumbers": [
+      "926",
+      "960",
+      "910"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Royal Palace Hotels Searching System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-05",
+    "studentNames": [
+      "Farman Ali",
+      "Haseeb Akbar",
+      "Muhammad Hamza"
+    ],
+    "studentRollNumbers": [
+      "925",
+      "970",
+      "980"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Getwork Freelancing Web Application",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-06",
+    "studentNames": [
+      "Ijaz Ali",
+      "Muhammad Subhan Saleem",
+      "Muhammad Awais Azhar"
+    ],
+    "studentRollNumbers": [
+      "913",
+      "999",
+      "941"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Food Order System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-07",
+    "studentNames": [
+      "Waqar Younas",
+      "Muhammad Mohtashim"
+    ],
+    "studentRollNumbers": [
+      "981",
+      "989"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Academy Searching & Management System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-09",
+    "studentNames": [
+      "Zeeshan",
+      "Zeeshan Aslam",
+      "Hamza Iftikhar"
+    ],
+    "studentRollNumbers": [
+      "902",
+      "947",
+      "944"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Marble Management System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Muhammad Qasim Ashraf",
+      "Muhammad Nouman",
+      "Musa Afzal Khan"
+    ],
+    "studentRollNumbers": [
+      "921",
+      "905",
+      "975"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Parent Teacher Liasoning System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Samama Imtiaz Butt",
+      "Noman Manzoor",
+      "Junaid Munir"
+    ],
+    "studentRollNumbers": [
+      "966",
+      "922",
+      "1000"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Platoo.com Animal Classified Website",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Talha Khan",
+      "Imran Ahmar",
+      "Fakhar Abbas"
+    ],
+    "studentRollNumbers": [
+      "990",
+      "911",
+      "952"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "EVENTOO Event Organizer",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Noman Shabbir",
+      "Muhammad Arslan",
+      "Tahir Afzal"
+    ],
+    "studentRollNumbers": [
+      "950",
+      "908",
+      "919"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Career Counciling System",
+    "description": "N/A",
+    "session": "2013-2017",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "Nabeel Abid",
+      "Zubair Ahmed",
+      "Asif Shahzad"
+    ],
+    "studentRollNumbers": [
+      "983",
+      "988",
+      "956"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Green Plan It",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-1",
+    "studentNames": [
+      "M Salman Ahmad",
+      "Saqib Ali",
+      "Muhammad Sajid"
+    ],
+    "studentRollNumbers": [
+      "1308",
+      "1397",
+      "1329"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Career Banao Online Career Guidance System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-2",
+    "studentNames": [
+      "Zaini-Ul-Abiden",
+      "Numan Ashiq",
+      "M Osama Sadiq"
+    ],
+    "studentRollNumbers": [
+      "1337",
+      "1349",
+      "1364"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Tutor Gallery",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-3",
+    "studentNames": [
+      "M Abdul Mateen Ahmad",
+      "M Wajahat Tanveer",
+      "Hafiz Ali Rehman"
+    ],
+    "studentRollNumbers": [
+      "1323",
+      "1315",
+      "1309"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Library Management System of GICCL",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-4",
+    "studentNames": [
+      "Hafiz M Adeel Tahir",
+      "Hasnain Talat Butt",
+      "Hasnain Ali"
+    ],
+    "studentRollNumbers": [
+      "1324",
+      "1326",
+      "1344"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Mechanic Finding Application",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-5",
+    "studentNames": [
+      "Hafiz Ayaz Ahmad",
+      "Syed Shahan Haider",
+      "M Irfan Ali"
+    ],
+    "studentRollNumbers": [
+      "1302",
+      "1370",
+      "1317"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "College Management System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-6",
+    "studentNames": [
+      "M Khawar Hayat",
+      "Sheraz Ali",
+      "Waqas Ali"
+    ],
+    "studentRollNumbers": [
+      "1319",
+      "1330",
+      "1332"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Voting System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-7",
+    "studentNames": [
+      "Waqas Ali",
+      "M Nadeem",
+      "M Adnan Arshad"
+    ],
+    "studentRollNumbers": [
+      "1375",
+      "1322",
+      "1362"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Commerce Web Application for GICCL",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-8",
+    "studentNames": [
+      "M Azeem",
+      "M Hammad Arshad",
+      "M Touseef"
+    ],
+    "studentRollNumbers": [
+      "1310",
+      "1316",
+      "1320"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Shopping Store",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-9",
+    "studentNames": [
+      "Hafiz Rehman Ali",
+      "Hafiz M Uzair",
+      "Asif Manzoor"
+    ],
+    "studentRollNumbers": [
+      "1303",
+      "1304",
+      "1356"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Hotel Management System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Waqas Ali",
+      "Sajid Nisar",
+      "M Adnan"
+    ],
+    "studentRollNumbers": [
+      "1334",
+      "1328",
+      "1321"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart University",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Mian M Moazzam",
+      "Saad Hassan",
+      "M Adnan"
+    ],
+    "studentRollNumbers": [
+      "1374",
+      "1327",
+      "1363"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Rescue 1122 Management System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Hamza Javed",
+      "M Ahmad",
+      "Hafiz M Faiq"
+    ],
+    "studentRollNumbers": [
+      "1347",
+      "1366",
+      "1305"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Ultimate Traffic Racer",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Muneeb Farooq",
+      "Mannan Shahid",
+      "Aqib Naseer"
+    ],
+    "studentRollNumbers": [
+      "1384",
+      "1392",
+      "1351"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Hostel Mangement System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "Ali Raza",
+      "Husnain Shoukat",
+      "Muhammad Faizan"
+    ],
+    "studentRollNumbers": [
+      "1400",
+      "1376",
+      "1348"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Cuisine Recipe Management System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-15",
+    "studentNames": [
+      "Hafiz M Afzaal Gilani",
+      "Syed Ali Asghar",
+      "Kamran Wasim"
+    ],
+    "studentRollNumbers": [
+      "1312",
+      "1391",
+      "1394"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "College Admission Management System",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-16",
+    "studentNames": [
+      "Muhammad Haseeb",
+      "Muhammad Usman",
+      "Hafiz M Saalim"
+    ],
+    "studentRollNumbers": [
+      "1306",
+      "1355",
+      "1353"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "National Notice Board (NNB)",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-17",
+    "studentNames": [
+      "M Waqar Mahmood",
+      "Habab Bin Ayyaz",
+      "Arslan Ayub"
+    ],
+    "studentRollNumbers": [
+      "1361",
+      "1381",
+      "1390"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Laundry Shop",
+    "description": "N/A",
+    "session": "2014-2018",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-18",
+    "studentNames": [
+      "Sikandar Abbas",
+      "Ikram Ullah Younas",
+      "Saeed Ahmad"
+    ],
+    "studentRollNumbers": [
+      "1382",
+      "1395",
+      "1396"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ADMISSION MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-01",
+    "studentNames": [
+      "M. MUBEEN",
+      "MEHROZ KHAN",
+      "M. IBRAR AHMAD"
+    ],
+    "studentRollNumbers": [
+      "73",
+      "33",
+      "94"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "LIBRARY MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-02",
+    "studentNames": [
+      "IRFAN KHALID",
+      "AHMAD FARAZ",
+      "HAMZA GHAFOOR"
+    ],
+    "studentRollNumbers": [
+      "40",
+      "60",
+      "48"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "HOSTEL MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-03",
+    "studentNames": [
+      "M. TALHA",
+      "M. WAQAR",
+      "SAAD MANSOOR"
+    ],
+    "studentRollNumbers": [
+      "85",
+      "28",
+      "49"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "VEHICLE TRACKING SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-04",
+    "studentNames": [
+      "M. SHAHZEB",
+      "M. HAMZA",
+      "HAMZA NAEEM"
+    ],
+    "studentRollNumbers": [
+      "10",
+      "89",
+      "51"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "GARMENTS MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-05",
+    "studentNames": [
+      "SAAD AHMAD",
+      "FAIZAN RASHEED",
+      "GHULAM MUSTAFA"
+    ],
+    "studentRollNumbers": [
+      "84",
+      "22",
+      "15"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "CRIME REPORTING SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-06",
+    "studentNames": [
+      "M. SULEMAN SHAFQAT",
+      "M. AWAIS",
+      "NOMAN AHMAD"
+    ],
+    "studentRollNumbers": [
+      "97",
+      "78",
+      "82"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "BAKERY MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-07",
+    "studentNames": [
+      "SAAD ALI",
+      "SHAHBAZ ALI",
+      "ABDUL REHMAN"
+    ],
+    "studentRollNumbers": [
+      "25",
+      "26",
+      "93"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "UNIVERSITY MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-08",
+    "studentNames": [
+      "FAIZAN TARIQ",
+      "HASSAN ISLAM",
+      "ALI HASNAIN"
+    ],
+    "studentRollNumbers": [
+      "21",
+      "24",
+      "44"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE FOOD ORDERING SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-09",
+    "studentNames": [
+      "ALI SHAHBAZ",
+      "SAMI ULLAH",
+      "NOMAN ASGHAR"
+    ],
+    "studentRollNumbers": [
+      "74",
+      "81",
+      "83"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE PROPERTY SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "M. BILAL",
+      "HAMZA CHOHAN"
+    ],
+    "studentRollNumbers": [
+      "4",
+      "86"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "A CHAT APP IN JAVA",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "FAHEEM YOUSAF",
+      "M. ZEESHAN",
+      "IBRAR KHAN"
+    ],
+    "studentRollNumbers": [
+      "62",
+      "65",
+      "31"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ANDROID BOOK STORE",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "JAFFAR HUSSAIN",
+      "M. AZAM",
+      "ABDUL RAHMAN"
+    ],
+    "studentRollNumbers": [
+      "54",
+      "46",
+      "6"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "CAR COMPARISON SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "M. WAQAR",
+      "UBAID-UR-RAHMAN",
+      "M. AHMAD"
+    ],
+    "studentRollNumbers": [
+      "42",
+      "3",
+      "12"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE NEWS MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2015-2019",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "HAMZA KHAN",
+      "DANIYAL KHURSHID",
+      "M. ABU HURAIRAH"
+    ],
+    "studentRollNumbers": [
+      "39",
+      "77",
+      "1"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "IMF CHEMICAL SYSTEM",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-01",
+    "studentNames": [
+      "Usman Ali Abbasi",
+      "Muhammad Ali Hassan",
+      "Muhammad Zubair Tariq"
+    ],
+    "studentRollNumbers": [
+      "124",
+      "131",
+      "142"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "KWH MEDIA PLAYER",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-02",
+    "studentNames": [
+      "Wasif Obaid",
+      "Kashif Khalil",
+      "Haris Mahmood"
+    ],
+    "studentRollNumbers": [
+      "112",
+      "121",
+      "126"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "THEKADAR MOBILE APP",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-03",
+    "studentNames": [
+      "Sanwal Khan",
+      "Tabassum Mehmood",
+      "Abid Ali"
+    ],
+    "studentRollNumbers": [
+      "107",
+      "123",
+      "170"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "MACOM READER",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-04",
+    "studentNames": [
+      "Khawaja Qasir Bashir",
+      "Muhammad Awais Qamar",
+      "Syed Ali Hassan Naqvi"
+    ],
+    "studentRollNumbers": [
+      "108",
+      "167",
+      "199"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ELECTRONIC FILES STORAGE AND PROCESSING SYSTEM",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-05",
+    "studentNames": [
+      "Ahmad Arif",
+      "Jawad Ahmad",
+      "Sulaman Anwar"
+    ],
+    "studentRollNumbers": [
+      "150",
+      "159",
+      "191"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "PETS CARE CONSULTANCY ANDOID APP",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-06",
+    "studentNames": [
+      "Ahmad Ashfaq",
+      "Muhammad Saad Naseer",
+      "Mudassar Muneer"
+    ],
+    "studentRollNumbers": [
+      "101",
+      "136",
+      "197"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "EVENTOUS.PK",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-07",
+    "studentNames": [
+      "Nouman Liaqat",
+      "Zeeshan Ali",
+      "Nabeel Ahmed"
+    ],
+    "studentRollNumbers": [
+      "104",
+      "141",
+      "154"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ICT (ISLAMIC CHARITY TRUST)",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-08",
+    "studentNames": [
+      "Muhammad Naeem Akhtar",
+      "Muhammad Adnan",
+      "Aqib Ali"
+    ],
+    "studentRollNumbers": [
+      "115",
+      "134",
+      "137"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "DOOR STEP SYSTEM",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-09",
+    "studentNames": [
+      "Muhammad Numan",
+      "Sameer Ahmed"
+    ],
+    "studentRollNumbers": [
+      "180",
+      "181"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "GICCL WEBSITE",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Habib Ur Rehman Butt",
+      "Muhammad Awais Zaheer",
+      "Syed Afeef Ali Shah"
+    ],
+    "studentRollNumbers": [
+      "158",
+      "173",
+      "186"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE BLOOD BANK",
+    "description": "N/A",
+    "session": "2016-2020",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Aqib Kamal",
+      "Waqas Ali",
+      "Waqar Younis"
+    ],
+    "studentRollNumbers": [
+      "118",
+      "135",
+      "162"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE NURSERY",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-01",
+    "studentNames": [
+      "Abdullah Nadeem",
+      "Wasif Ali",
+      "Nazim Ali"
+    ],
+    "studentRollNumbers": [
+      "193",
+      "141",
+      "161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "WASTE MANAGEMENT",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-02",
+    "studentNames": [
+      "Umair Ahmad",
+      "Umair Khalid",
+      "Daniyal Malik"
+    ],
+    "studentRollNumbers": [
+      "108",
+      "145",
+      "168"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ELECTRONIC VOTING",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-03",
+    "studentNames": [
+      "Asad Javed",
+      "Hammad Shabbir",
+      "Hafiz M Nouman"
+    ],
+    "studentRollNumbers": [
+      "154",
+      "164",
+      "180"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "THE LAND TEAM WEBSITE",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-04",
+    "studentNames": [
+      "Muhammad Waseem",
+      "Mudassir Zaffar",
+      "Muhammad Haris"
+    ],
+    "studentRollNumbers": [
+      "133",
+      "199",
+      "120"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "WATER FILTRATION PLANT",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-05",
+    "studentNames": [
+      "Ali Hassan Khan",
+      "Usama Nadeem",
+      "Hafiz M Subhan"
+    ],
+    "studentRollNumbers": [
+      "147",
+      "182",
+      "116"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "SMART KITCHEN GARDENING",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-06",
+    "studentNames": [
+      "Waleed Nazir",
+      "Ali Gufran",
+      "Rashid Liaqat"
+    ],
+    "studentRollNumbers": [
+      "109",
+      "151",
+      "107"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "CRIME REPORTING SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-07",
+    "studentNames": [
+      "Hafiz M Ahmad",
+      "Hafiz Saim Siddique",
+      "Hafiz M Abdullah"
+    ],
+    "studentRollNumbers": [
+      "117",
+      "118",
+      "119"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "VEHICLE TRACKING SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-08",
+    "studentNames": [
+      "Abdul Mateen",
+      "Waqas Shabeer",
+      "Saeed Anwar"
+    ],
+    "studentRollNumbers": [
+      "121",
+      "124",
+      "125"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE MARRIAGE BUREAU",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-09",
+    "studentNames": [
+      "M Abdullah",
+      "M Faisal",
+      "Qamar Abbas"
+    ],
+    "studentRollNumbers": [
+      "126",
+      "127",
+      "130"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE SHOPPING WEBSITE",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Ahsan Ali",
+      "Ameer Hamza",
+      "Talha Jamil"
+    ],
+    "studentRollNumbers": [
+      "131",
+      "132",
+      "140"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE ADMISSION SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Asad Ullah",
+      "Faisal Mehmood",
+      "M Ismael"
+    ],
+    "studentRollNumbers": [
+      "142",
+      "143",
+      "149"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE AUCTION SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Hafiz M Arslan",
+      "Ali Raza",
+      "M Abdullah"
+    ],
+    "studentRollNumbers": [
+      "150",
+      "155",
+      "158"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE TOUR GUIDER",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Muneeb Ur Rehman",
+      "Ali Haider",
+      "Muneeb Ur Rehman"
+    ],
+    "studentRollNumbers": [
+      "162",
+      "167",
+      "171"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "HOSTEL MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "M Naeem",
+      "Hafiz M Ali",
+      "Ali Raza"
+    ],
+    "studentRollNumbers": [
+      "172",
+      "174",
+      "175"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE HOME TUTOR",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-15",
+    "studentNames": [
+      "Ahtasham Rasheed",
+      "Abdullah Ashraf",
+      "Ali Murtaza"
+    ],
+    "studentRollNumbers": [
+      "177",
+      "178",
+      "179"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "RESTAURANT MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-16",
+    "studentNames": [
+      "Afaq Ahmad",
+      "Hafiz Abdul Manan",
+      "Ahmad Ali"
+    ],
+    "studentRollNumbers": [
+      "181",
+      "184",
+      "185"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-COMMERCE WEBSITE",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-17",
+    "studentNames": [
+      "Hasnain Altaf",
+      "M Nafees",
+      "Zain Ul Abidin"
+    ],
+    "studentRollNumbers": [
+      "186",
+      "187",
+      "190"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE MOBILE STORE",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-18",
+    "studentNames": [
+      "Sajid Hussain",
+      "Ahmad Raza",
+      "Usman Ali"
+    ],
+    "studentRollNumbers": [
+      "191",
+      "192",
+      "194"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "GYM MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2017-2021",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-19",
+    "studentNames": [
+      "Hafiz M Awais",
+      "M Ahmad"
+    ],
+    "studentRollNumbers": [
+      "196",
+      "198"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Crime Reporting System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-01",
+    "studentNames": [
+      "Malik Ali",
+      "Abdul Sami",
+      "Sheikh Najam Ur Rehman Siddiqui"
+    ],
+    "studentRollNumbers": [
+      "170",
+      "172",
+      "107"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Logistics Mobile Application",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-02",
+    "studentNames": [
+      "Hafiz Muhammad Mujahid",
+      "Muhammad Awais",
+      "Muhammad Shawaiz Minhas"
+    ],
+    "studentRollNumbers": [
+      "200",
+      "110",
+      "156"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Food On Time",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-03",
+    "studentNames": [
+      "Faiq Ali",
+      "Hamid Rauf",
+      "Abdullah Yasin"
+    ],
+    "studentRollNumbers": [
+      "190",
+      "193",
+      "123"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Car Rental System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-04",
+    "studentNames": [
+      "Hafiz Muhammad Usman",
+      "Muhammad Talha",
+      "Muneeb Ur Rehman"
+    ],
+    "studentRollNumbers": [
+      "102",
+      "105",
+      "106"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Tailor Management System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-05",
+    "studentNames": [
+      "Hafiz Abdul Rehman",
+      "Muhammad Ahmad",
+      "Muhammad Haseeb-Ur-Rehman"
+    ],
+    "studentRollNumbers": [
+      "114",
+      "118",
+      "120"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "FYP Management System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-06",
+    "studentNames": [
+      "Abdullah Tariq",
+      "Shahzaib Ali",
+      "Zain-Ul-Abidin"
+    ],
+    "studentRollNumbers": [
+      "115",
+      "116",
+      "128"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Challan System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-07",
+    "studentNames": [
+      "Ahtsham Afzal",
+      "Asad Ullah",
+      "Shafique Ahmad"
+    ],
+    "studentRollNumbers": [
+      "117",
+      "119",
+      "122"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Property Management System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-08",
+    "studentNames": [
+      "Hafiz Muhammad Zaid",
+      "Ahmad Raza",
+      "Waleed Khan"
+    ],
+    "studentRollNumbers": [
+      "125",
+      "130",
+      "131"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Library Management System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-09",
+    "studentNames": [
+      "Fazeel Ur Rehman",
+      "Waqas Ali",
+      "Muhammad Haseeb"
+    ],
+    "studentRollNumbers": [
+      "133",
+      "138",
+      "140"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Food Dilivery System",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Hassan Ijaz",
+      "Muhammad Salman",
+      "Muhammad Umair Iqbal"
+    ],
+    "studentRollNumbers": [
+      "142",
+      "145",
+      "149"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E MONITORING (Smart Electricity Monitoring System)",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Muhammad Bilal",
+      "Muhammad Sabakh Bhatti",
+      "Muhammad Yousaf"
+    ],
+    "studentRollNumbers": [
+      "136",
+      "162",
+      "186"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "BIT Law Associates (Lawyer Appointment and Management System)",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Ammar Ahmad",
+      "Zeeshan Nawaz",
+      "Kamal Ahmad"
+    ],
+    "studentRollNumbers": [
+      "158",
+      "152",
+      "168"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "RENT SEEK",
+    "description": "N/A",
+    "session": "2018-2022",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Talha Rafiq",
+      "Waleed Khalid",
+      "Shahbaz Ali"
+    ],
+    "studentRollNumbers": [
+      "150",
+      "180",
+      "183"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "NOTEPAD ULTRA",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-1",
+    "studentNames": [
+      "Umer Farooq",
+      "Muhammad Bilal"
+    ],
+    "studentRollNumbers": [
+      "2108",
+      "2163"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "OPTICAL CHARACTER RECOGNITION UNDER ILLUMINATION CONDITION USING TEXTUAL SEGMENTATION",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-2",
+    "studentNames": [
+      "Hafiz Ahmad Fazil",
+      "Ali Raza Anwar",
+      "Muhammad Abdullah Arshad"
+    ],
+    "studentRollNumbers": [
+      "2127",
+      "2130",
+      "2134"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "(PLAYER-EX) MEDIA PLAYER",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-3",
+    "studentNames": [
+      "Syed Murtajiz Hussain",
+      "Muhammad Umair Qasim",
+      "Taimoor Ali"
+    ],
+    "studentRollNumbers": [
+      "2103",
+      "2107",
+      "2112"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "3D SURVIVAL GAME (THE SEARCH OF LIFE)",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-4",
+    "studentNames": [
+      "Muhammad Faizan Khan",
+      "Rian Mohi ud Din",
+      "Ali Raza"
+    ],
+    "studentRollNumbers": [
+      "2149",
+      "2156",
+      "2157"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "DEEP LEARNING",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-5",
+    "studentNames": [
+      "M Faizan",
+      "Muzammil Javeed",
+      "M Suleman"
+    ],
+    "studentRollNumbers": [
+      "2162",
+      "2166",
+      "2167"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "SMART TUTOR",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-6",
+    "studentNames": [
+      "M Umar",
+      "M Zeeshan Ghafoor",
+      "M Awais"
+    ],
+    "studentRollNumbers": [
+      "2168",
+      "2171",
+      "2180"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE FOOD DELIVERY SYSTEM",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-7",
+    "studentNames": [
+      "Abdul Basit",
+      "Muneeb Ur Rehman",
+      "Haris Munir"
+    ],
+    "studentRollNumbers": [
+      "2181",
+      "2182",
+      "2184"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "GYM MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-8",
+    "studentNames": [
+      "M Ali Raza",
+      "Zain Ul Abdin",
+      "M Faizan"
+    ],
+    "studentRollNumbers": [
+      "2185",
+      "2186",
+      "2187"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE ADMISSION SYSTEM",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-9",
+    "studentNames": [
+      "M Ahmad",
+      "M Umer",
+      "M Arslan"
+    ],
+    "studentRollNumbers": [
+      "2188",
+      "2193",
+      "2194"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "BAKERY MANAGEMENT SYSTEM",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "M Zunair",
+      "Zain Ali",
+      "Abdul Rahman"
+    ],
+    "studentRollNumbers": [
+      "2195",
+      "2197",
+      "2198"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "DESERVING STUDENTS SCHOLARSHIPS WEBSITE",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-1",
+    "studentNames": [
+      "Kashif Ali",
+      "Muhammad Abdullah"
+    ],
+    "studentRollNumbers": [
+      "2143",
+      "2161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "FILTERING POLITICAL SENTIMENTS FROM SOCIAL MEDIA TRENDS",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-2",
+    "studentNames": [
+      "Irfan Ali Shah",
+      "Muhammad Azhar",
+      "Bazal-Ur-Rehman"
+    ],
+    "studentRollNumbers": [
+      "2128",
+      "2129",
+      "2144"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "FUTURE JOB PREDICTION USING DATA MINING",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-3",
+    "studentNames": [
+      "Aqib Ali",
+      "Muhammad Faisal",
+      "Ali Raza"
+    ],
+    "studentRollNumbers": [
+      "2121",
+      "2122",
+      "2110"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "RECIPE RATING BASED ON SENTIMENT ANALYSIS",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-4",
+    "studentNames": [
+      "M Ahsan Tahir",
+      "M Yasir Nasir",
+      "Sajid Ali"
+    ],
+    "studentRollNumbers": [
+      "174",
+      "120",
+      "158"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "SENTIMENTS ANALYSIS OF ROMAN URDU ON SOCIAL MEDIA",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "Hafiz M Ali Raza",
+      "Bilal Ahmad",
+      "M Awais"
+    ],
+    "studentRollNumbers": [
+      "109",
+      "143",
+      "146"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ONLINE AUCTION SYSTEM",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-16",
+    "studentNames": [
+      "Ali Hamza",
+      "M Suleman",
+      "Shahid Ali"
+    ],
+    "studentRollNumbers": [
+      "189",
+      "177",
+      "160"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "SECURE E-LEARNING USING DATA MINING TECHNIQUES",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-17",
+    "studentNames": [
+      "Haider Ali",
+      "Summar Ghaffar",
+      "Taimor Yasin"
+    ],
+    "studentRollNumbers": [
+      "181",
+      "184",
+      "126"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "EVALUATION OF STUDENT ACADEMIC PERFORMANCE BASED ON FUZZY LOGIC",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-18",
+    "studentNames": [
+      "Nasir Nazeer",
+      "Ali Raza",
+      "M Umair Shabbir"
+    ],
+    "studentRollNumbers": [
+      "168",
+      "128",
+      "192"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "ZIP (COMPRESSOR)",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-19",
+    "studentNames": [
+      "Sajjad Hassan",
+      "Ahmed Ali",
+      "M Sameer"
+    ],
+    "studentRollNumbers": [
+      "190",
+      "102",
+      "154"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "TEXT AND IMAGE ENCRYPTION APP FOR SECURING INTERNAL TRANSFER",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-20",
+    "studentNames": [
+      "Syed Usama Tanvir",
+      "Abid Ali",
+      "Shamraiz Khan"
+    ],
+    "studentRollNumbers": [
+      "105",
+      "114",
+      "162"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "TRAFIC SIGNS DETECTION DEFECTION USING MATLAB",
+    "description": "N/A",
+    "session": "2019-2023",
+    "supervisorName": "Dr. M Munir ud Din",
+    "department": "BS-IT",
+    "groupName": "G-21",
+    "studentNames": [
+      "Armaghan Mubeen",
+      "Abubakar Ahmad",
+      "M Ahmad"
+    ],
+    "studentRollNumbers": [
+      "186",
+      "132",
+      "134"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Ultimate Builds (Custom PC Building Website)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G1",
+    "studentNames": [
+      "Muhammad Bilad Ul Haq",
+      "Muhammad Faza Ul Haq",
+      "Faizan Ahmad"
+    ],
+    "studentRollNumbers": [
+      "161",
+      "163",
+      "170"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Business Directory (Business Consulting Platform with AI Chatbot)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G 2",
+    "studentNames": [
+      "Muhammad Huzaifa Yaqoob",
+      "Hamad Ahmed",
+      "Moazzam Shabbir"
+    ],
+    "studentRollNumbers": [
+      "104",
+      "120",
+      "183"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Road Safe Vision (Improving Road Safety In Pakistan Using Artificial Intelligence)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G3",
+    "studentNames": [
+      "Abdullah Ghaznavi",
+      "Hamza Javed",
+      "Haroon"
+    ],
+    "studentRollNumbers": [
+      "103",
+      "115",
+      "158"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Medi Care (Patient Disease Prediction System using Machine Learning)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G4",
+    "studentNames": [
+      "Muhammad Usman Ghani",
+      "Hafiz Muhammad Arslan",
+      "Ahmad Raza"
+    ],
+    "studentRollNumbers": [
+      "164",
+      "166",
+      "2147"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Auto Grader (AI-based Document Checking and Grading)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G5",
+    "studentNames": [
+      "Ehtisham Farooq",
+      "Rana Muhammad Ahmad",
+      "Rana Muhammad Taha"
+    ],
+    "studentRollNumbers": [
+      "140",
+      "144",
+      "151"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Digital Key (Smart Door Lock using Facial Recognition)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G6",
+    "studentNames": [
+      "Hafiz Muhammad Arqam",
+      "Ghulam Fareed",
+      "Hafiz Muhammad Subhan"
+    ],
+    "studentRollNumbers": [
+      "107",
+      "112",
+      "118"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Rent A Ride (Vehicle Rental Management System)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G7",
+    "studentNames": [
+      "Muhammad Zain Ul Abidin",
+      "Hafiz Muhammad Muneeb",
+      "Muhammad Awais"
+    ],
+    "studentRollNumbers": [
+      "116",
+      "121",
+      "122"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Travel Buddy (AI-Powered Tourism Planner)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G8",
+    "studentNames": [
+      "Rana Muhammad Muneeb",
+      "Hafiz Ali Husnain",
+      "Mubeen Aslam"
+    ],
+    "studentRollNumbers": [
+      "131",
+      "135",
+      "139"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Livestock Health Mark (Livestock HealthCare & Marketing Management System)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G9",
+    "studentNames": [
+      "Ahmed Fiaz",
+      "Muhammad Umair",
+      "Ali Akbar Subhani"
+    ],
+    "studentRollNumbers": [
+      "168",
+      "196",
+      "200"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Digi Floor (Digitizing Floor Plan Layouts using Artificial Intelligence)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G10",
+    "studentNames": [
+      "Abdul Aleem",
+      "Muhammad Hamza Javaid",
+      "Muhammad Sunnain Fiaz"
+    ],
+    "studentRollNumbers": [
+      "123",
+      "127",
+      "129"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Ocean Shield (Detection of Illegal sea immigration using Computer vision)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G11",
+    "studentNames": [
+      "Shahbaz Butt",
+      "Faizan Ali",
+      "Shabbir Ali"
+    ],
+    "studentRollNumbers": [
+      "153",
+      "169",
+      "187"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Cam Eye (Intelligent Surveillance System For Educational Institutes)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G12",
+    "studentNames": [
+      "Muhammad Hassam Khan Durrani",
+      "Ahtisham Zahid",
+      "Ahmad Mujtaba"
+    ],
+    "studentRollNumbers": [
+      "2163",
+      "2171",
+      "2176"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Career Path (AI Career Counselor & University Predictor)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G13",
+    "studentNames": [
+      "Muhammad Hamza",
+      "Muhammad Ali Jinnah",
+      "Hammad Hussain"
+    ],
+    "studentRollNumbers": [
+      "2161",
+      "2165",
+      "2170"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "GICCLVERSE (3D Virtual Tour of GICCL)",
+    "description": "N/A",
+    "session": "2020-2024",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G14",
+    "studentNames": [
+      "Muhammad Zain",
+      "Muhammad Sajjad",
+      "Waleed Khalid"
+    ],
+    "studentRollNumbers": [
+      "2179",
+      "2180",
+      "2183"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Time 2 Deal",
+    "description": "(AI Driven Inventory Management System For Al-Madina Pharmacy)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-1",
+    "studentNames": [
+      "Hassan Shahid",
+      "Haseeb Ahmed",
+      "Muhammad Hanzala Ahsan"
+    ],
+    "studentRollNumbers": [
+      "114",
+      "123",
+      "171"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "LawBotics",
+    "description": "(AI Legal Document Analyzer)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-2",
+    "studentNames": [
+      "Muhammad Azib Moeen",
+      "Hasnain Arif",
+      "Muhammad Ayub"
+    ],
+    "studentRollNumbers": [
+      "127",
+      "117",
+      "129"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Mandi Manager",
+    "description": "( Inventory Management System for Afzaal Butt & Co.)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-3",
+    "studentNames": [
+      "Muhammad Sheraz Butt",
+      "Muhammad Hassan Kashif",
+      "Sajjad Maqsood"
+    ],
+    "studentRollNumbers": [
+      "121",
+      "139",
+      "155"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Plagiarism Detection System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-4",
+    "studentNames": [
+      "Attique Ur Rehman",
+      "Hanzla Ahmad",
+      "Noman Ali"
+    ],
+    "studentRollNumbers": [
+      "149",
+      "168",
+      "161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Digital Attendance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-5",
+    "studentNames": [
+      "Usman Ali",
+      "Muhammad Adnan",
+      "Usama Bin Tariq"
+    ],
+    "studentRollNumbers": [
+      "141",
+      "137",
+      "165"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Tailoring System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-6",
+    "studentNames": [
+      "Ali Hassan",
+      "Muhammad Faizan",
+      "Muhammad Ahmad"
+    ],
+    "studentRollNumbers": [
+      "131",
+      "133",
+      "145"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Property Portal",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-7",
+    "studentNames": [
+      "Muhammad Faizan",
+      "Taimoor Hassan",
+      "Junaid Ahmed"
+    ],
+    "studentRollNumbers": [
+      "142",
+      "143",
+      "153"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Campus Surveillance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-8",
+    "studentNames": [
+      "Hasnain Altaf",
+      "Abu Bakar",
+      "Haroon Iqbal"
+    ],
+    "studentRollNumbers": [
+      "148",
+      "158",
+      "167"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Medicine Delivery System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-9",
+    "studentNames": [
+      "Muhammad Abdullah",
+      "Umar Iftikhar",
+      "Muhammad Suleman"
+    ],
+    "studentRollNumbers": [
+      "157",
+      "159",
+      "166"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Blood Bank System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Ibrar Ahmed",
+      "Sajid Hussain",
+      "Muhammad Shoaib"
+    ],
+    "studentRollNumbers": [
+      "172",
+      "178",
+      "180"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart City Services",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Muhammad Usman",
+      "Shehzad Maqbool",
+      "Muhammad Faizan"
+    ],
+    "studentRollNumbers": [
+      "173",
+      "176",
+      "181"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Crime Reporting & Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Aqeel Ur Rehman",
+      "Muhammad Waseem",
+      "Ahmad Ali"
+    ],
+    "studentRollNumbers": [
+      "174",
+      "177",
+      "184"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Sign Language Translator",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Sameer Tariq",
+      "Ahmad Hassan",
+      "Muhammad Awais"
+    ],
+    "studentRollNumbers": [
+      "182",
+      "183",
+      "185"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Student Grievance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "Muhammad Afzal",
+      "Rameez Sadiq",
+      "Muhammad Shoaib"
+    ],
+    "studentRollNumbers": [
+      "186",
+      "187",
+      "188"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Commerce Web Application",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-15",
+    "studentNames": [
+      "Muhammad Ahmad",
+      "Mian Muhammad Haris",
+      "Kashif Hussain"
+    ],
+    "studentRollNumbers": [
+      "189",
+      "191",
+      "192"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Food Delivery System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-16",
+    "studentNames": [
+      "Hafiz Muhammad Hassan",
+      "Muhammad Ali Hassan",
+      "Muhammad Huzaifa Khan"
+    ],
+    "studentRollNumbers": [
+      "194",
+      "196",
+      "198"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Real Time Object Detection",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-17",
+    "studentNames": [
+      "Muhammad Muneeb ur Rehman",
+      "Muhammad Talha",
+      "Muhammad Abdullah"
+    ],
+    "studentRollNumbers": [
+      "195",
+      "197",
+      "2148"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Pharmacy",
+    "description": "(AI Based Medicine Recommendation System)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-18",
+    "studentNames": [
+      "Muhammad Qasim",
+      "Muhammad Ahmad",
+      "Zaeem Mumtaz"
+    ],
+    "studentRollNumbers": [
+      "170",
+      "2107",
+      "2122"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Billing System",
+    "description": "(For Departmental Stores)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-19",
+    "studentNames": [
+      "Taha Bin Tahir",
+      "Hafiz Muhammad Arslan",
+      "Usman Ali"
+    ],
+    "studentRollNumbers": [
+      "2111",
+      "2120",
+      "2131"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "FitPro",
+    "description": "(AI Based Gym Trainer & Workout Planner)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-20",
+    "studentNames": [
+      "Syed Ali Hasnain",
+      "Ahmad Raza",
+      "Raja Atif Raza"
+    ],
+    "studentRollNumbers": [
+      "2114",
+      "2135",
+      "2150"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Event Management System",
+    "description": "(For Mangolia Event Complex)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-21",
+    "studentNames": [
+      "Muhammad Talha",
+      "Muhammad Usman",
+      "Ali Hassan"
+    ],
+    "studentRollNumbers": [
+      "2102",
+      "2136",
+      "2139"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Waste Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-22",
+    "studentNames": [
+      "Rana Muhammad Sufyan",
+      "Muhammad Faizan",
+      "Hasnain Ahmad"
+    ],
+    "studentRollNumbers": [
+      "2115",
+      "2117",
+      "2138"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Bus Tracking & Ticketing System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-23",
+    "studentNames": [
+      "Rana Muhammad Areeb",
+      "Muhammad Usman",
+      "Ahmad Raza"
+    ],
+    "studentRollNumbers": [
+      "2106",
+      "2133",
+      "2137"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "AI-Based Healthcare Chatbot",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-24",
+    "studentNames": [
+      "Ali Hassan",
+      "Hafiz Muhammad Anas",
+      "Muhammad Sami Khan"
+    ],
+    "studentRollNumbers": [
+      "2103",
+      "2125",
+      "2144"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Disaster Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-25",
+    "studentNames": [
+      "Muhammad Jamal Hussain Toor",
+      "Muneeb Ur Rehman Sajid",
+      "Ahmad Zaka"
+    ],
+    "studentRollNumbers": [
+      "2159",
+      "2141",
+      "2193"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Plant Nursery and Plant Recognition Management System",
+    "description": "For Pot Green Nursery Farm",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-26",
+    "studentNames": [
+      "Ammar Shoukat",
+      "Shehryar",
+      "Muhammad Kashaf"
+    ],
+    "studentRollNumbers": [
+      "2134",
+      "2118",
+      "2116"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Irrigation Scheduler",
+    "description": "(Prediction Sytem based on Weather)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-27",
+    "studentNames": [
+      "Umer Ali",
+      "Abdul Saboor",
+      "Muhammad Shariq ul Hassan"
+    ],
+    "studentRollNumbers": [
+      "2180",
+      "2156",
+      "2128"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "AI-Driven Human Resources Management System",
+    "description": "For Metro Cash & Carry",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-28",
+    "studentNames": [
+      "Muhammad Mujtaba",
+      "Muhammad Noman",
+      "Obaid Ali Siddiqui"
+    ],
+    "studentRollNumbers": [
+      "2177",
+      "2181",
+      "2161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Automated Payroll System using Facial Recognition & GPS Tracking",
+    "description": "For GICCL",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-29",
+    "studentNames": [
+      "Muhammad Shiraz",
+      "Muhammad Abdullah",
+      "Hafiz Muhammad Zunair"
+    ],
+    "studentRollNumbers": [
+      "2160",
+      "2182",
+      "2184"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Canteen Management System",
+    "description": "(Using Android & Web)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-30",
+    "studentNames": [
+      "Hafiz Muhammad Zain ul Abdin",
+      "Shoaib Ahmed",
+      "Muhammad Umar Farooq"
+    ],
+    "studentRollNumbers": [
+      "2185",
+      "2191",
+      "2195"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Sentiment Analysis of Roman Urdu",
+    "description": "(For Daraz.pk)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-31",
+    "studentNames": [
+      "Saad Ahmad",
+      "Waleed Ahmad",
+      "Shehroz Ahmad"
+    ],
+    "studentRollNumbers": [
+      "2196",
+      "2198",
+      "2199"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Time 2 Deal",
+    "description": "(AI Driven Inventory Management System For Al-Madina Pharmacy)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-1",
+    "studentNames": [
+      "Hassan Shahid",
+      "Haseeb Ahmed",
+      "Muhammad Hanzala Ahsan"
+    ],
+    "studentRollNumbers": [
+      "114",
+      "123",
+      "171"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "LawBotics",
+    "description": "(AI Legal Document Analyzer)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-2",
+    "studentNames": [
+      "Muhammad Azib Moeen",
+      "Hasnain Arif",
+      "Muhammad Ayub"
+    ],
+    "studentRollNumbers": [
+      "127",
+      "117",
+      "129"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Mandi Manager",
+    "description": "( Inventory Management System for Afzaal Butt & Co.)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-3",
+    "studentNames": [
+      "Muhammad Sheraz Butt",
+      "Muhammad Hassan Kashif",
+      "Sajjad Maqsood"
+    ],
+    "studentRollNumbers": [
+      "121",
+      "139",
+      "155"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Plagiarism Detection System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-4",
+    "studentNames": [
+      "Attique Ur Rehman",
+      "Hanzla Ahmad",
+      "Noman Ali"
+    ],
+    "studentRollNumbers": [
+      "149",
+      "168",
+      "161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Digital Attendance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-5",
+    "studentNames": [
+      "Usman Ali",
+      "Muhammad Adnan",
+      "Usama Bin Tariq"
+    ],
+    "studentRollNumbers": [
+      "141",
+      "137",
+      "165"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Tailoring System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-6",
+    "studentNames": [
+      "Ali Hassan",
+      "Muhammad Faizan",
+      "Muhammad Ahmad"
+    ],
+    "studentRollNumbers": [
+      "131",
+      "133",
+      "145"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Property Portal",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-7",
+    "studentNames": [
+      "Muhammad Faizan",
+      "Taimoor Hassan",
+      "Junaid Ahmed"
+    ],
+    "studentRollNumbers": [
+      "142",
+      "143",
+      "153"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Campus Surveillance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-8",
+    "studentNames": [
+      "Hasnain Altaf",
+      "Abu Bakar",
+      "Haroon Iqbal"
+    ],
+    "studentRollNumbers": [
+      "148",
+      "158",
+      "167"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Medicine Delivery System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-9",
+    "studentNames": [
+      "Muhammad Abdullah",
+      "Umar Iftikhar",
+      "Muhammad Suleman"
+    ],
+    "studentRollNumbers": [
+      "157",
+      "159",
+      "166"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Blood Bank System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-10",
+    "studentNames": [
+      "Ibrar Ahmed",
+      "Sajid Hussain",
+      "Muhammad Shoaib"
+    ],
+    "studentRollNumbers": [
+      "172",
+      "178",
+      "180"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart City Services",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-11",
+    "studentNames": [
+      "Muhammad Usman",
+      "Shehzad Maqbool",
+      "Muhammad Faizan"
+    ],
+    "studentRollNumbers": [
+      "173",
+      "176",
+      "181"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Crime Reporting & Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-12",
+    "studentNames": [
+      "Aqeel Ur Rehman",
+      "Muhammad Waseem",
+      "Ahmad Ali"
+    ],
+    "studentRollNumbers": [
+      "174",
+      "177",
+      "184"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Sign Language Translator",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-13",
+    "studentNames": [
+      "Sameer Tariq",
+      "Ahmad Hassan",
+      "Muhammad Awais"
+    ],
+    "studentRollNumbers": [
+      "182",
+      "183",
+      "185"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Student Grievance System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-14",
+    "studentNames": [
+      "Muhammad Afzal",
+      "Rameez Sadiq",
+      "Muhammad Shoaib"
+    ],
+    "studentRollNumbers": [
+      "186",
+      "187",
+      "188"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Commerce Web Application",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-15",
+    "studentNames": [
+      "Muhammad Ahmad",
+      "Mian Muhammad Haris",
+      "Kashif Hussain"
+    ],
+    "studentRollNumbers": [
+      "189",
+      "191",
+      "192"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Food Delivery System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-16",
+    "studentNames": [
+      "Hafiz Muhammad Hassan",
+      "Muhammad Ali Hassan",
+      "Muhammad Huzaifa Khan"
+    ],
+    "studentRollNumbers": [
+      "194",
+      "196",
+      "198"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Real Time Object Detection",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-17",
+    "studentNames": [
+      "Muhammad Muneeb ur Rehman",
+      "Muhammad Talha",
+      "Muhammad Abdullah"
+    ],
+    "studentRollNumbers": [
+      "195",
+      "197",
+      "2148"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Pharmacy",
+    "description": "(AI Based Medicine Recommendation System)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-18",
+    "studentNames": [
+      "Muhammad Qasim",
+      "Muhammad Ahmad",
+      "Zaeem Mumtaz"
+    ],
+    "studentRollNumbers": [
+      "170",
+      "2107",
+      "2122"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Billing System",
+    "description": "(For Departmental Stores)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-19",
+    "studentNames": [
+      "Taha Bin Tahir",
+      "Hafiz Muhammad Arslan",
+      "Usman Ali"
+    ],
+    "studentRollNumbers": [
+      "2111",
+      "2120",
+      "2131"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "FitPro",
+    "description": "(AI Based Gym Trainer & Workout Planner)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-20",
+    "studentNames": [
+      "Syed Ali Hasnain",
+      "Ahmad Raza",
+      "Raja Atif Raza"
+    ],
+    "studentRollNumbers": [
+      "2114",
+      "2135",
+      "2150"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Online Event Management System",
+    "description": "(For Mangolia Event Complex)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-21",
+    "studentNames": [
+      "Muhammad Talha",
+      "Muhammad Usman",
+      "Ali Hassan"
+    ],
+    "studentRollNumbers": [
+      "2102",
+      "2136",
+      "2139"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "E-Waste Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-22",
+    "studentNames": [
+      "Rana Muhammad Sufyan",
+      "Muhammad Faizan",
+      "Hasnain Ahmad"
+    ],
+    "studentRollNumbers": [
+      "2115",
+      "2117",
+      "2138"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Bus Tracking & Ticketing System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-23",
+    "studentNames": [
+      "Rana Muhammad Areeb",
+      "Muhammad Usman",
+      "Ahmad Raza"
+    ],
+    "studentRollNumbers": [
+      "2106",
+      "2133",
+      "2137"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "AI-Based Healthcare Chatbot",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-24",
+    "studentNames": [
+      "Ali Hassan",
+      "Hafiz Muhammad Anas",
+      "Muhammad Sami Khan"
+    ],
+    "studentRollNumbers": [
+      "2103",
+      "2125",
+      "2144"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Disaster Management System",
+    "description": "N/A",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-25",
+    "studentNames": [
+      "Muhammad Jamal Hussain Toor",
+      "Muneeb Ur Rehman Sajid",
+      "Ahmad Zaka"
+    ],
+    "studentRollNumbers": [
+      "2159",
+      "2141",
+      "2193"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Plant Nursery and Plant Recognition Management System",
+    "description": "For Pot Green Nursery Farm",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-26",
+    "studentNames": [
+      "Ammar Shoukat",
+      "Shehryar",
+      "Muhammad Kashaf"
+    ],
+    "studentRollNumbers": [
+      "2134",
+      "2118",
+      "2116"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Irrigation Scheduler",
+    "description": "(Prediction Sytem based on Weather)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-27",
+    "studentNames": [
+      "Umer Ali",
+      "Abdul Saboor",
+      "Muhammad Shariq ul Hassan"
+    ],
+    "studentRollNumbers": [
+      "2180",
+      "2156",
+      "2128"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "AI-Driven Human Resources Management System",
+    "description": "For Metro Cash & Carry",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-28",
+    "studentNames": [
+      "Muhammad Mujtaba",
+      "Muhammad Noman",
+      "Obaid Ali Siddiqui"
+    ],
+    "studentRollNumbers": [
+      "2177",
+      "2181",
+      "2161"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Automated Payroll System using Facial Recognition & GPS Tracking",
+    "description": "For GICCL",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-29",
+    "studentNames": [
+      "Muhammad Shiraz",
+      "Muhammad Abdullah",
+      "Hafiz Muhammad Zunair"
+    ],
+    "studentRollNumbers": [
+      "2160",
+      "2182",
+      "2184"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Smart Canteen Management System",
+    "description": "(Using Android & Web)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-30",
+    "studentNames": [
+      "Hafiz Muhammad Zain ul Abdin",
+      "Shoaib Ahmed",
+      "Muhammad Umar Farooq"
+    ],
+    "studentRollNumbers": [
+      "2185",
+      "2191",
+      "2195"
+    ],
+    "projectLink": ""
+  },
+  {
+    "title": "Sentiment Analysis of Roman Urdu",
+    "description": "(For Daraz.pk)",
+    "session": "2021-2025",
+    "supervisorName": "",
+    "department": "BS-IT",
+    "groupName": "G-31",
+    "studentNames": [
+      "Saad Ahmad",
+      "Waleed Ahmad",
+      "Shehroz Ahmad"
+    ],
+    "studentRollNumbers": [
+      "2196",
+      "2198",
+      "2199"
+    ],
+    "projectLink": ""
+  }
+]
