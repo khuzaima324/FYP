@@ -74,57 +74,261 @@ export const getMyProposals = async (req, res) => {
 
 // @desc    Create a new proposal (One-Pager Submission)
 // @route   POST /api/proposals
-export const createProposal = async (req, res) => {
-  const { title, description, supervisor, originProject } = req.body;
+// export const createProposal = async (req, res) => {
+//   const { title, description, supervisor, originProject } = req.body;
 
+//   if (!req.file) {
+//     return res.status(400).json({ message: "One-pager (PDF) is required" });
+//   }
+//   if (!title) {
+//     return res.status(400).json({ message: "A project title is required" });
+//   }
+
+//   try {
+//     const student = await Student.findOne({ userId: req.user._id });
+//     if (!student) {
+//       return res.status(404).json({ message: "Student profile not found" });
+//     }
+//     const groupName = student.group;
+//     if (!groupName) {
+//       return res.status(400).json({ message: "You must be in a group to submit." });
+//     }
+    
+//     const groupMembers = await Student.find({ group: groupName });
+//     const groupMemberIds = groupMembers.map(s => s._id);
+
+//     const existingProject = await Project.findOne({ students: { $in: groupMemberIds } });
+//     if (existingProject) {
+//       return res.status(400).json({ message: "Your group is already assigned to a project." });
+//     }
+    
+//     // ✅ 2. FIXED: Check for *all* pending statuses
+//     const pendingProposal = await Proposal.findOne({ 
+//       students: { $in: groupMemberIds }, 
+//       status: { $in: ['pending_onepager', 'pending_proposal', 'pending_final_approval']} 
+//     });
+//     if (pendingProposal) {
+//       return res.status(400).json({ message: "Your group already has a pending proposal." });
+//     }
+
+//     const proposal = await Proposal.create({
+//       title,
+//       description: description || "N/A",
+//       supervisor: supervisor || null,
+//       students: groupMemberIds,
+//       onePagerPath: req.file.path,
+//       originProject: originProject || null,
+//       status: 'pending_onepager', // ✅ 3. FIXED: Set correct initial status
+//     });
+
+//     res.status(201).json(proposal);
+//   } catch (error) {
+//     console.error("Error creating proposal:", error);
+//     res.status(500).json({ message: "Error submitting proposal", error });
+//   }
+// };
+
+// export const createProposal = async (req, res) => {
+//   const { title, description, groupName, memberRollNumbers, originProject } = req.body;
+
+//   // 1. Basic Validation
+//   if (!req.file) {
+//     return res.status(400).json({ message: "One-pager (PDF) is required" });
+//   }
+//   if (!title || !groupName) {
+//     return res.status(400).json({ message: "Project Title and Group Name are required" });
+//   }
+
+//   try {
+//     // 2. Get the logged-in student (The Leader)
+//     const leader = await Student.findOne({ userId: req.user._id });
+//     if (!leader) return res.status(404).json({ message: "Student not found" });
+
+//     // 3. Check if Leader is already in a group
+//     if (leader.group) {
+//       return res.status(400).json({ message: `You are already in group ${leader.group}.` });
+//     }
+
+//     // 4. Process Member Roll Numbers
+//     let allMemberIds = [leader._id]; // Start with leader
+//     let allMemberRolls = [leader.rollNumber];
+
+//     if (memberRollNumbers) {
+//       // Split "123, 456" into array ["123", "456"]
+//       const rolls = memberRollNumbers.split(",").map((r) => r.trim()).filter(Boolean);
+      
+//       if (rolls.length > 0) {
+//         // Find these students in DB
+//         const foundMembers = await Student.find({ rollNumber: { $in: rolls } });
+
+//         // Check if all roll numbers were valid
+//         if (foundMembers.length !== rolls.length) {
+//           return res.status(404).json({ message: "One or more Roll Numbers are invalid/not found." });
+//         }
+
+//         // Check if any member is already in a group
+//         for (const member of foundMembers) {
+//           if (member.group) {
+//             return res.status(400).json({ 
+//               message: `Student ${member.name} (${member.rollNumber}) is already in a group.` 
+//             });
+//           }
+//           // Prevent adding yourself again
+//           if (member._id.toString() === leader._id.toString()) continue;
+
+//           allMemberIds.push(member._id);
+//           allMemberRolls.push(member.rollNumber);
+//         }
+//       }
+//     }
+
+//     // 5. Check if Group Name is taken (optional, but good practice)
+//     const existingGroup = await Student.findOne({ group: groupName });
+//     if (existingGroup) {
+//       return res.status(400).json({ message: `Group Name '${groupName}' is already taken.` });
+//     }
+
+//     // 6. ASSIGN GROUP TO ALL STUDENTS
+//     // This updates the Student Data automatically
+//     await Student.updateMany(
+//       { _id: { $in: allMemberIds } },
+//       { group: groupName }
+//     );
+
+//     // 7. Create the Proposal
+//     const proposal = await Proposal.create({
+//       title,
+//       description: description || "N/A",
+//       supervisor: null, // Admin assigns later
+//       students: allMemberIds, // Link all students
+//       onePagerPath: req.file.path,
+//       originProject: originProject || null,
+//       status: "pending_onepager",
+//     });
+
+//     res.status(201).json(proposal);
+
+//   } catch (error) {
+//     console.error("Error creating proposal:", error);
+//     res.status(500).json({ message: "Error submitting proposal", error: error.message });
+//   }
+// };
+
+// auto assign group based on logged in student
+export const createProposal = async (req, res) => {
+  // 1. Removed 'groupName' from request body extraction
+  const { title, description, memberRollNumbers, originProject } = req.body;
+
+  // 2. Basic Validation
   if (!req.file) {
     return res.status(400).json({ message: "One-pager (PDF) is required" });
   }
   if (!title) {
-    return res.status(400).json({ message: "A project title is required" });
+    return res.status(400).json({ message: "Project Title is required" });
   }
 
   try {
-    const student = await Student.findOne({ userId: req.user._id });
-    if (!student) {
-      return res.status(404).json({ message: "Student profile not found" });
-    }
-    const groupName = student.group;
-    if (!groupName) {
-      return res.status(400).json({ message: "You must be in a group to submit." });
-    }
-    
-    const groupMembers = await Student.find({ group: groupName });
-    const groupMemberIds = groupMembers.map(s => s._id);
+    // 3. Get the logged-in student (The Leader)
+    const leader = await Student.findOne({ userId: req.user._id });
+    if (!leader) return res.status(404).json({ message: "Student not found" });
 
-    const existingProject = await Project.findOne({ students: { $in: groupMemberIds } });
-    if (existingProject) {
-      return res.status(400).json({ message: "Your group is already assigned to a project." });
+    // 4. Check if Leader is already in a group
+    if (leader.group) {
+      return res.status(400).json({ message: `You are already in group ${leader.group}.` });
     }
+
+    // 5. Process Member Roll Numbers
+    let allMemberIds = [leader._id]; // Start with leader
+    let allMemberRolls = [leader.rollNumber];
+
+    if (memberRollNumbers) {
+      const rolls = memberRollNumbers.split(",").map((r) => r.trim()).filter(Boolean);
+      
+      if (rolls.length > 0) {
+        // Find these students in DB
+        const foundMembers = await Student.find({ rollNumber: { $in: rolls } });
+
+        // Check if all roll numbers were valid
+        if (foundMembers.length !== rolls.length) {
+          return res.status(404).json({ message: "One or more Roll Numbers are invalid/not found." });
+        }
+
+        // Check if any member is already in a group
+        for (const member of foundMembers) {
+          if (member.group) {
+            return res.status(400).json({ 
+              message: `Student ${member.name} (${member.rollNumber}) is already in a group.` 
+            });
+          }
+          // Prevent adding yourself again
+          if (member._id.toString() === leader._id.toString()) continue;
+
+          allMemberIds.push(member._id);
+          allMemberRolls.push(member.rollNumber);
+        }
+      }
+    }
+
+    // ============================================================
+    // 6. NEW LOGIC: Auto-Assign Group Name
+    // ============================================================
     
-    // ✅ 2. FIXED: Check for *all* pending statuses
-    const pendingProposal = await Proposal.findOne({ 
-      students: { $in: groupMemberIds }, 
-      status: { $in: ['pending_onepager', 'pending_proposal', 'pending_final_approval']} 
+    // A. Determine Department Code
+    // We try to get it from leader.department. 
+    // If not available, we try to parse the first part of the roll number (e.g., "BSIT" from "BSIT-2021-001").
+    // Fallback to "FYP" if nothing is found.
+    let deptCode = "FYP"; 
+    
+    if (leader.department) {
+      deptCode = leader.department.toUpperCase();
+    } else if (leader.rollNumber && leader.rollNumber.includes("-")) {
+      // Attempt to grab prefix from roll number if department field is missing
+      deptCode = leader.rollNumber.split("-")[0].toUpperCase();
+    }
+
+    // B. Count existing groups for this department to determine the next number
+    // We use Regex to find groups starting with "BSIT-G-"
+    const existingCount = await Proposal.countDocuments({
+      // This regex looks for strings starting with "BSIT-G-" (case insensitive)
+      // We count Proposals, which usually map 1:1 to Groups.
+      groupName: { $regex: `^${deptCode}-G-`, $options: "i" }
     });
-    if (pendingProposal) {
-      return res.status(400).json({ message: "Your group already has a pending proposal." });
-    }
 
+    // C. Generate the Name (e.g., BSIT-G-1)
+    const nextNumber = existingCount + 1;
+    const autoGroupName = `${deptCode}-G-${nextNumber}`;
+
+    // ============================================================
+
+    // 7. ASSIGN GROUP TO ALL STUDENTS
+    // This updates the Student Data automatically
+    await Student.updateMany(
+      { _id: { $in: allMemberIds } },
+      { group: autoGroupName }
+    );
+
+    // 8. Create the Proposal
     const proposal = await Proposal.create({
       title,
       description: description || "N/A",
-      supervisor: supervisor || null,
-      students: groupMemberIds,
+      supervisor: null,
+      students: allMemberIds,
       onePagerPath: req.file.path,
       originProject: originProject || null,
-      status: 'pending_onepager', // ✅ 3. FIXED: Set correct initial status
+      status: "pending_onepager",
+      groupName: autoGroupName, // <--- Saving the auto-generated name here
     });
+    
+    // 
+
+// [Image of Database Structure for Student Group Allocation]
+
 
     res.status(201).json(proposal);
+
   } catch (error) {
     console.error("Error creating proposal:", error);
-    res.status(500).json({ message: "Error submitting proposal", error });
+    res.status(500).json({ message: "Error submitting proposal", error: error.message });
   }
 };
 
